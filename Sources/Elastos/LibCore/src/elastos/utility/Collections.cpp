@@ -14,12 +14,12 @@
 // limitations under the License.
 //=========================================================================
 
-//#include "Elastos.CoreLibrary.IO.h"
+#include "Elastos.CoreLibrary.IO.h"
 #include "Collections.h"
 #include "CBoolean.h"
 #include "Arrays.h"
 #include "CArrayList.h"
-//#include "CRandom.h"
+#include "CRandom.h"
 #include "AutoLock.h"
 
 #include <elastos/core/AutoLock.h>
@@ -28,7 +28,7 @@ using Elastos::Core::IComparable;
 using Elastos::Core::IBoolean;
 using Elastos::Core::CBoolean;
 using Elastos::Core::EIID_IComparator;
-//using Elastos::Utility::CRandom;
+using Elastos::Utility::CRandom;
 using Elastos::Utility::Arrays;
 using Elastos::Utility::IArrayList;
 using Elastos::Utility::CArrayList;
@@ -1778,7 +1778,6 @@ ECode Collections::_SynchronizedCollection::GetHashCode(
     return NOERROR;
 }
 
-#if 0
 ECode Collections::_SynchronizedCollection::WriteObject(
     /* [in] */ IObjectOutputStream* stream)
 {
@@ -1788,7 +1787,6 @@ ECode Collections::_SynchronizedCollection::WriteObject(
     }
     return NOERROR;
 }
-#endif
 
 //====================================================================
 // Collections::SynchronizedRandomAccessList::
@@ -2082,7 +2080,6 @@ ECode Collections::_SynchronizedList::GetSubList(
     return NOERROR;
 }
 
-#if 0
 ECode Collections::_SynchronizedList::WriteObject(
     /* [in] */ IObjectOutputStream* stream)
 {
@@ -2092,7 +2089,6 @@ ECode Collections::_SynchronizedList::WriteObject(
     }
     return NOERROR;
 }
-#endif
 
 ECode Collections::_SynchronizedList::Add(
     /* [in] */ IInterface* object,
@@ -2456,7 +2452,6 @@ ECode Collections::_SynchronizedMap::ToString(
     return NOERROR;
 }
 
-#if 0
 ECode Collections::_SynchronizedMap::WriteObject(
     /* [in] */ IObjectOutputStream* stream)
 {
@@ -2466,7 +2461,6 @@ ECode Collections::_SynchronizedMap::WriteObject(
     }
     return NOERROR;
 }
-#endif
 
 //====================================================================
 // Collections::_SynchronizedSet::
@@ -2596,7 +2590,6 @@ ECode Collections::_SynchronizedSet::ToArray(
     return _SynchronizedCollection::ToArray(inArray, outArray);
 }
 
-#if 0
 ECode Collections::_SynchronizedSet::WriteObject(
     /* [in] */ IObjectOutputStream* stream)
 {
@@ -2606,7 +2599,6 @@ ECode Collections::_SynchronizedSet::WriteObject(
     }
     return NOERROR;
 }
-#endif
 
 ECode Collections::_SynchronizedSet::Add(
     /* [in] */ IInterface* object)
@@ -2860,7 +2852,6 @@ ECode Collections::_SynchronizedSortedMap::GetSize(
     return _SynchronizedMap::GetSize(size);
 }
 
-#if 0
 ECode Collections::_SynchronizedSortedMap::WriteObject(
     /* [in] */ IObjectOutputStream* stream)
 {
@@ -2870,7 +2861,6 @@ ECode Collections::_SynchronizedSortedMap::WriteObject(
     }
     return NOERROR;
 }
-#endif
 
 //====================================================================
 // Collections::_SynchronizedSortedSet::
@@ -3084,7 +3074,6 @@ ECode Collections::_SynchronizedSortedSet::ToArray(
     return _SynchronizedSet::ToArray(inArray, outArray);
 }
 
-#if 0
 ECode Collections::_SynchronizedSortedSet::WriteObject(
     /* [in] */ IObjectOutputStream* stream)
 {
@@ -3094,7 +3083,6 @@ ECode Collections::_SynchronizedSortedSet::WriteObject(
     }
     return NOERROR;
 }
-#endif
 
 ECode Collections::_SynchronizedSortedSet::Add(
     /* [in] */ IInterface* object)
@@ -5180,15 +5168,11 @@ ECode Collections::ReverseOrder(
 ECode Collections::Shuffle(
     /* [in] */ IList* list)
 {
-#if 0
     AutoPtr<IRandom> r;
     CRandom::New((IRandom**)&r);
     return Shuffle(list, r);
-#endif
-    return NOERROR;
 }
 
-#if 0
 ECode Collections::Shuffle(
     /* [in] */ IList* list,
     /* [in] */ IRandom* random)
@@ -5235,7 +5219,6 @@ ECode Collections::Shuffle(
     }
     return NOERROR;
 }
-#endif
 
 /**
  * Returns a set containing the specified element. The set cannot be
@@ -6394,14 +6377,12 @@ ECode Collections::_SetFromMap::RemoveAll(
     return AbstractSet::RemoveAll(collection, modified);
 }
 
-#if 0
 ECode Collections::_SetFromMap::ReadObject(
     /* [in] */ IObjectInputStream* stream)
 {
     stream->DefaultReadObject();
     return mM->GetKeySet((ISet**)&mBackingSet);
 }
-#endif
 
 //====================================================================
 // Collections::_AsLIFOQueue::

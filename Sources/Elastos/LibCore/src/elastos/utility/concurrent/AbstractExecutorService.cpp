@@ -15,7 +15,7 @@
 //=========================================================================
 
 #include "AbstractExecutorService.h"
-#include "CFutureTask.h"
+// #include "CFutureTask.h"
 #include "TimeUnit.h"
 #include "CExecutorCompletionService.h"
 #include "CSystem.h"
@@ -35,7 +35,7 @@ AutoPtr<IRunnableFuture> AbstractExecutorService::NewTaskFor(
     /* [in] */ IInterface* value)
 {
     AutoPtr<IRunnableFuture> task;
-    CFutureTask::New(runnable, value, (IRunnableFuture**)&task);
+    // CFutureTask::New(runnable, value, (IRunnableFuture**)&task);
     return task;
 }
 
@@ -43,7 +43,7 @@ AutoPtr<IRunnableFuture> AbstractExecutorService::NewTaskFor(
     /* [in] */ ICallable* callable)
 {
     AutoPtr<IRunnableFuture> task;
-    CFutureTask::New(callable, (IRunnableFuture**)&task);
+    // CFutureTask::New(callable, (IRunnableFuture**)&task);
     return task;
 }
 

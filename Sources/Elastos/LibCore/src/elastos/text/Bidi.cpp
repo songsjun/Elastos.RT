@@ -555,7 +555,7 @@ ECode Bidi::RequiresBidi(
 
 
 struct BiDiData {
-    BiDiData(UBiDi* biDi) : mBiDi(biDi), mEmbeddingLevels(NULL) {
+    BiDiData(UBiDi* biDi) : mBiDi(biDi), mEmbeddingLevels(nullptr) {
     }
 
     ~BiDiData() {

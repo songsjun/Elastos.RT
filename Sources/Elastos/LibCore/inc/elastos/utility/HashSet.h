@@ -20,8 +20,8 @@
 #include "AbstractSet.h"
 
 using Elastos::Core::ICloneable;
-//using Elastos::IO::IObjectInputStream;
-//using Elastos::IO::IObjectOutputStream;
+using Elastos::IO::IObjectInputStream;
+using Elastos::IO::IObjectOutputStream;
 using Elastos::IO::ISerializable;
 
 namespace Elastos {
@@ -218,12 +218,12 @@ public:
         /* [in] */ Float loadFactor);
 
 private:
-//    CARAPI WriteObject(
-//        /* [in] */ IObjectOutputStream* stream);
+    CARAPI WriteObject(
+        /* [in] */ IObjectOutputStream* stream);
 
     // @SuppressWarnings("unchecked")
-//    CARAPI ReadObject(
-//        /* [in] */ IObjectInputStream* stream);
+    CARAPI ReadObject(
+        /* [in] */ IObjectInputStream* stream);
 
 private:
     ECO_LOCAL static const Int64 sSerialVersionUID = -5024744406713321676LL;

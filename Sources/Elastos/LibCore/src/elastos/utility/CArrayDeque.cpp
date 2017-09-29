@@ -14,13 +14,13 @@
 // limitations under the License.
 //=========================================================================
 
-//#include "Elastos.CoreLibrary.IO.h"
+#include "Elastos.CoreLibrary.IO.h"
 #include "CArrayDeque.h"
 
 using Elastos::Core::EIID_ICloneable;
 using Elastos::IO::EIID_ISerializable;
-//using Elastos::IO::IOutputStream;
-//using Elastos::IO::IInputStream;
+using Elastos::IO::IOutputStream;
+using Elastos::IO::IInputStream;
 
 namespace Elastos {
 namespace Utility {
@@ -764,7 +764,6 @@ ECode CArrayDeque::RetainAll(
     return AbstractCollection::RetainAll(collection, modified);
 }
 
-#if 0
 ECode CArrayDeque::WriteObject(
     /* [in] */ IObjectOutputStream* stream)
 {
@@ -803,7 +802,6 @@ ECode CArrayDeque::ReadObject(
     }
     return NOERROR;
 }
-#endif
 
 ECode CArrayDeque::Add(
     /* [in] */ IInterface* object)

@@ -24,12 +24,12 @@
 #include "ByteBufferAsInt16Buffer.h"
 #include "ByteBufferAsInt32Buffer.h"
 #include "ByteBufferAsInt64Buffer.h"
-#include "Memory.h"
+// #include "Memory.h"
 
 using Elastos::Core::Math;
 using Elastos::IO::Channels::FileChannelMapMode_NONE;
 using Libcore::IO::ISizeOf;
-using Libcore::IO::Memory;
+// using Libcore::IO::Memory;
 
 namespace Elastos {
 namespace IO {
@@ -808,8 +808,10 @@ ECode DirectByteBuffer::Compact()
     }
     Int32 remainvalue = 0;
     GetRemaining(&remainvalue);
-
+    
+    #if 0
     Memory::Memmove(this, 0, this, mPosition, remainvalue);
+    #endif
     mPosition = mLimit - mPosition;
     mLimit = mCapacity;
     mMark = UNSET_MARK;

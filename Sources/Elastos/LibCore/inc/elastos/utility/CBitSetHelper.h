@@ -21,8 +21,8 @@
 #include "Singleton.h"
 
 using Elastos::Core::Singleton;
-//using Elastos::IO::IInt64Buffer;
-//using Elastos::IO::IByteBuffer;
+using Elastos::IO::IInt64Buffer;
+using Elastos::IO::IByteBuffer;
 
 namespace Elastos {
 namespace Utility {
@@ -50,11 +50,9 @@ public:
      * sequence of bits. This method does not alter the {@code LongBuffer}.
      * @hide 1.7
      */
-#if 0
     CARAPI ValueOf(
         /* [in] */ IInt64Buffer* int64Arr,
         /* [out] */ IBitSet** bs);
-#endif
 
     /**
      * Equivalent to {@code BitSet.valueOf(ByteBuffer.wrap(bytes))}.
@@ -69,11 +67,9 @@ public:
      * sequence of bits. This method does not alter the {@code ByteBuffer}.
      * @hide 1.7
      */
-#if 0
     CARAPI ValueOf(
         /* [in] */ IByteBuffer* byteArr,
         /* [out] */ IBitSet** bs);
-#endif
 };
 
 } // namespace Utility

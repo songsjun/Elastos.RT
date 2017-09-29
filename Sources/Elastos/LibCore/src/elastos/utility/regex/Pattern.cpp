@@ -232,14 +232,16 @@ ECode Pattern::CompileImpl(
     //UnicodeString regexString(temp.unicodeString());
     //UText *pUText = utext_openUTF8(NULL, regex.string(), regex.GetLength(), &status);
     //UnicodeString regexString("ad", 2, 0);
+/*
     UnicodeString regexString = UNICODE_STRING(regex.string(), regex.GetByteLength());
     RegexPattern* regexP = RegexPattern::compile(regexString, flags, error, status);
     if (!U_SUCCESS(status)) {
         if (regexP) delete regexP;
         return E_PATTERN_SYNTAX_EXCEPTION;
-//        throwPatternSyntaxException(env, status, regex, error);
+        //throwPatternSyntaxException(env, status, regex, error);
     }
     *result = regexP;
+*/
     return NOERROR;
 }
 

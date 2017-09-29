@@ -409,6 +409,11 @@ public:
         /* [in] */ IThreadUncaughtExceptionHandler* handler,
         /* [in] */ const Boolean& asyncMode);
 
+    /**
+     * Creates a {@code ForkJoinPool} with the given parameters, without
+     * any security checks or parameter validation.  Invoked directly by
+     * makeCommonPool.
+     */
     CARAPI constructor(
         /* [in] */ Int32 parallelism,
         /* [in] */ IForkJoinPoolForkJoinWorkerThreadFactory* factory,
@@ -910,18 +915,6 @@ private:
 
     static CARAPI_(AutoPtr<IForkJoinPoolForkJoinWorkerThreadFactory>) CheckFactory(
         /* [in] */ IForkJoinPoolForkJoinWorkerThreadFactory* factory);
-
-    /**
-     * Creates a {@code ForkJoinPool} with the given parameters, without
-     * any security checks or parameter validation.  Invoked directly by
-     * makeCommonPool.
-     */
-    ForkJoinPool(
-        /* [in] */ Int32 parallelism,
-        /* [in] */ IForkJoinPoolForkJoinWorkerThreadFactory* factory,
-        /* [in] */ IThreadUncaughtExceptionHandler* handler,
-        /* [in] */ Int32 mode,
-        /* [in] */ const String& workerNamePrefix);
 
     static CARAPI_(AutoPtr<IForkJoinPool>) MakeCommonPool();
 

@@ -101,7 +101,7 @@ ECode CASN1GeneralizedTime::SetEncodingContent(
 
     temp += "Z";
     AutoPtr<ArrayOf<Byte> > ct = temp.GetBytes();
-    ((CBerInputStream*)bos)->mContent = CoreUtils::ConvertByteArray(ct);
+    ((CBerInputStream*)bos)->mContent = TO_IINTERFACE(CoreUtils::ConvertByteArray(ct));
     return bos->SetLength(ct->GetLength());
 }
 

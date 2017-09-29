@@ -109,6 +109,7 @@ ECode Charset::AvailableCharsets(
     }
 
     // Add all charsets provided by all charset providers...
+    #if 0
     AutoPtr<IServiceLoader> sl = ServiceLoader::Load(EIID_ICharsetProvider, NULL);
     if (sl) {
         AutoPtr<IIterator> iter;
@@ -132,6 +133,7 @@ ECode Charset::AvailableCharsets(
             }
         }
     }
+    #endif
 
     return Collections::UnmodifiableSortedMap(ISortedMap::Probe(charsets), outsm);
 }
@@ -171,6 +173,7 @@ ECode Charset::ForName(
     }
 
     // Does a configured CharsetProvider have this charset?
+    #if 0
     AutoPtr<IServiceLoader> sl = ServiceLoader::Load(EIID_ICharsetProvider, NULL);
     if (sl) {
         AutoPtr<IIterator> iter;
@@ -187,6 +190,7 @@ ECode Charset::ForName(
 
         }
     }
+    #endif
 
     return E_UNSUPPORTED_CHARSET_EXCEPTION;
 }

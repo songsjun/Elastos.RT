@@ -22,8 +22,8 @@
 
 using Elastos::Core::ICloneable;
 using Elastos::IO::ISerializable;
-//using Elastos::IO::IObjectOutputStream;
-//using Elastos::IO::IObjectInputStream;
+using Elastos::IO::IObjectOutputStream;
+using Elastos::IO::IObjectInputStream;
 
 namespace Elastos {
 namespace Utility {
@@ -286,11 +286,11 @@ private:
         /* [in] */ Int32 i,
         /* [out] */ Boolean* result);
 
-//    CARAPI WriteObject(
-//        /* [in] */ IObjectOutputStream* stream);
+    CARAPI WriteObject(
+        /* [in] */ IObjectOutputStream* stream);
 
-//    CARAPI ReadObject(
-//        /* [in] */ IObjectInputStream* stream);
+    CARAPI ReadObject(
+        /* [in] */ IObjectInputStream* stream);
 
 protected:
     CARAPI_(String) GetClassName() { return String("CArrayDeque"); }

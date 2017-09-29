@@ -24,7 +24,7 @@
 
 using Elastos::Core::INumber;
 using Elastos::Core::IComparable;
-//using Elastos::Utility::IRandom;
+using Elastos::Utility::IRandom;
 
 namespace Elastos {
 namespace Math {
@@ -80,9 +80,9 @@ public:
      * @param random is the random number generator to be used.
      * @throws IllegalArgumentException if {@code numBits} < 0.
      */
-//    CARAPI constructor(
-//        /* [in] */ Int32 numBits,
-//        /* [in] */ IRandom* random);
+    CARAPI constructor(
+        /* [in] */ Int32 numBits,
+        /* [in] */ IRandom* random);
 
     /**
      * Constructs a random {@code BigInteger} instance in the range {@code [0,
@@ -100,10 +100,10 @@ public:
      * @see <a href="http://www.openssl.org/docs/crypto/BN_rand.html">
      *      Specification of random generator used from OpenSSL library</a>
      */
-//    CARAPI constructor(
-//        /* [in] */ Int32 bitLength,
-//        /* [in] */ Int32 certainty,
-//        /* [in] */ IRandom* random);
+    CARAPI constructor(
+        /* [in] */ Int32 bitLength,
+        /* [in] */ Int32 certainty,
+        /* [in] */ IRandom* random);
 
     CARAPI constructor(
         /* [in] */ Int32 sign,
@@ -558,10 +558,10 @@ public:
      * @return probably prime random {@code BigInteger} instance.
      * @throws IllegalArgumentException if {@code bitLength < 2}.
      */
-//    static CARAPI ProbablePrime(
-//        /* [in] */ Int32 bitLength,
-//        /* [in] */ IRandom* random,
-//        /* [out] */ IBigInteger** result);
+    static CARAPI ProbablePrime(
+        /* [in] */ Int32 bitLength,
+        /* [in] */ IRandom* random,
+        /* [out] */ IBigInteger** result);
 
     /**
      * Returns a string representation of this {@code BigInteger} in decimal

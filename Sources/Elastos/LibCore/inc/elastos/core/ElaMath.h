@@ -19,7 +19,7 @@
 
 #include "Elastos.CoreLibrary.h"
 
-//using Elastos::Utility::IRandom;
+using Elastos::Utility::IRandom;
 
 namespace Elastos {
 namespace Core {
@@ -1551,7 +1551,7 @@ public:
     static const AutoPtr< ArrayOf<Int64> > LONG_POWERS_OF_TEN;
 
 private:
-//    ECO_LOCAL static AutoPtr<IRandom> sRandom;
+    ECO_LOCAL static AutoPtr<IRandom> sRandom;
 };
 
 } // namespace Core

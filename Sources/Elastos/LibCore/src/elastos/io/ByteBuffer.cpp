@@ -21,7 +21,7 @@
 #include "CArrayOf.h"
 #include "CoreUtils.h"
 #include "Arrays.h"
-#include "Memory.h"
+// #include "Memory.h"
 #include "logging/Logger.h"
 
 using Elastos::Core::IComparable;
@@ -31,7 +31,7 @@ using Elastos::Core::EIID_IByte;
 using Elastos::Utility::Arrays;
 using Elastos::Utility::Logging::Logger;
 using Elastos::IO::Channels::FileChannelMapMode_NONE;
-using Libcore::IO::Memory;
+// using Libcore::IO::Memory;
 
 namespace Elastos {
 namespace IO {
@@ -380,8 +380,10 @@ ECode ByteBuffer::Put(
         dstObject = NioUtils::GetUnsafeArray(this);
         dstOffset += NioUtils::GetUnsafeArrayOffset(this);
     }
-
+    
+    #if 0
     FAIL_RETURN(Memory::Memmove(dstObject, dstOffset, srcObject, srcOffset, srcByteCount))
+    #endif
     Int32 limit = 0;
     IBuffer::Probe(src)->GetLimit(&limit);
     IBuffer::Probe(src)->SetPosition(limit);

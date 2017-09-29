@@ -60,7 +60,7 @@ CARAPI CShell::constructor(
 void CShell::Clone(
     /* [out] */ CShell& s)
 {
-    s.mDb = mDb;
+    // s.mDb = mDb;
     s.mEcho = mEcho;
     s.mMode = mMode;
     s.mCount = 0;
@@ -362,7 +362,7 @@ void CShell::SetTableName(
         return;
     }
     Boolean isflag = FALSE;
-    mDb->Is3(&isflag);
+    // mDb->Is3(&isflag);
     if (isflag) {
         mTableName = SqlQuoteDbl(str);
     } else {

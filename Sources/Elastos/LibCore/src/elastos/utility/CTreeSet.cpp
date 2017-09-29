@@ -14,7 +14,7 @@
 // limitations under the License.
 //=========================================================================
 
-//#include "Elastos.CoreLibrary.IO.h"
+#include "Elastos.CoreLibrary.IO.h"
 #include "CTreeSet.h"
 #include "CTreeMap.h"
 #include "CBoolean.h"
@@ -24,8 +24,8 @@ using Elastos::Core::CBoolean;
 using Elastos::Core::IComparable;
 using Elastos::Core::EIID_ICloneable;
 using Elastos::IO::EIID_ISerializable;
-// using Elastos::IO::IInputStream;
-// using Elastos::IO::IOutputStream;
+using Elastos::IO::IInputStream;
+using Elastos::IO::IOutputStream;
 
 namespace Elastos {
 namespace Utility {
@@ -409,7 +409,6 @@ ECode CTreeSet::GetTailSet(
     return NOERROR;
 }
 
-#if 0
 void CTreeSet::WriteObject(
     /* [in] */ IObjectOutputStream* stream)
 {
@@ -460,7 +459,6 @@ void CTreeSet::ReadObject(
     }
     mBackingMap = map;
 }
-#endif
 
 ECode CTreeSet::ContainsAll(
     /* [in] */ ICollection* collection,

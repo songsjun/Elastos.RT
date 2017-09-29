@@ -17,7 +17,7 @@
 #include "Elastos.CoreLibrary.Security.h"
 #include "CStrictJarFile.h"
 #include "CCloseGuardHelper.h"
-#include "CRandomAccessFile.h"
+// #include "CRandomAccessFile.h"
 #include "CManifest.h"
 #include "CArrayOf.h"
 #include "CJarFile.h"
@@ -35,7 +35,7 @@ using Elastos::Core::UniquePtr;
 using Elastos::Core::CArrayOf;
 using Elastos::Core::ICloseGuardHelper;
 using Elastos::Core::CCloseGuardHelper;
-using Elastos::IO::CRandomAccessFile;
+// using Elastos::IO::CRandomAccessFile;
 using Elastos::IO::ICloseable;
 using Libcore::IO::IoUtils;
 using Libcore::IO::IStreams;
@@ -129,7 +129,9 @@ ECode CStrictJarFile::constructor(
     helper->Get((ICloseGuard**)&mGuard);
 
     FAIL_RETURN(NativeOpenJarFile(fileName, &mNativeHandle))
+    #if 0
     CRandomAccessFile::New(fileName, String("r"), (IRandomAccessFile**)&mRaf);
+    #endif
 
     ECode ec = NOERROR;
     // try {

@@ -20,9 +20,9 @@
 #include "elastos/utility/AbstractSet.h"
 
 using Elastos::Core::ICloneable;
-//using Elastos::IO::IObjectInputStream;
-//using Elastos::IO::IObjectOutputStream;
-//using Elastos::IO::IObjectStreamField;
+using Elastos::IO::IObjectInputStream;
+using Elastos::IO::IObjectOutputStream;
+using Elastos::IO::IObjectStreamField;
 using Elastos::IO::ISerializable;
 
 namespace Elastos {
@@ -779,11 +779,11 @@ private:
     ECO_LOCAL static CARAPI_(Int32) RoundUpToPowerOfTwo(
         /* [in] */ Int32 i);
 
-//    ECO_LOCAL CARAPI WriteObject(
-//        /* [in] */ IObjectOutputStream* stream);
+    ECO_LOCAL CARAPI WriteObject(
+        /* [in] */ IObjectOutputStream* stream);
 
-//    ECO_LOCAL CARAPI ReadObject(
-//        /* [in] */ IObjectInputStream* stream);
+    ECO_LOCAL CARAPI ReadObject(
+        /* [in] */ IObjectInputStream* stream);
 
 private:
     /**
@@ -825,7 +825,7 @@ private:
 
     ECO_LOCAL static const Int64 sSerialVersionUID = 1421746759512286392LL;
 
-//    ECO_LOCAL static const AutoPtr<ArrayOf<IObjectStreamField*> > sSerialPersistentFields; // = {
+    ECO_LOCAL static const AutoPtr<ArrayOf<IObjectStreamField*> > sSerialPersistentFields; // = {
     //     new ObjectStreamField("threshold", int.class),
     //     new ObjectStreamField("loadFactor", float.class),
     // };

@@ -14,9 +14,9 @@
 # limitations under the License.
 #=========================================================================
 
-#DIRS += concurrent
-#DIRS += jar
-#DIRS += logging
-#DIRS += regex
-#DIRS += zip
-#DIRS += prefs
+DIRS += concurrent
+DIRS += jar
+DIRS += logging
+DIRS += regex
+DIRS += zip
+DIRS += prefs

@@ -14,7 +14,7 @@
 // limitations under the License.
 //=========================================================================
 
-//#include "Elastos.CoreLibrary.IO.h"
+#include "Elastos.CoreLibrary.IO.h"
 #include "Vector.h"
 #include "Arrays.h"
 #include "Collections.h"
@@ -914,17 +914,16 @@ ECode Vector::TrimToSize()
     return NOERROR;
 }
 
-#if 0
 ECode Vector::WriteObject(
     /* [in] */ IObjectOutputStream* stream)
 {
-    {    AutoLock syncLock(this);
+    {    
+        AutoLock syncLock(this);
         stream->DefaultWriteObject();
     }
 
     return NOERROR;
 }
-#endif
 
 } // namespace Utility
 } // namespace Elastos

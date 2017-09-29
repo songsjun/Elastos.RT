@@ -21,7 +21,7 @@
 
 using Elastos::Core::ICloneable;
 using Elastos::Utility::AbstractList;
-//using Elastos::IO::IObjectOutputStream;
+using Elastos::IO::IObjectOutputStream;
 using Elastos::IO::ISerializable;
 
 namespace Elastos {
@@ -287,8 +287,8 @@ private:
     CARAPI GrowBy(
         /* [in] */ Int32 required);
 
-//    CARAPI WriteObject(
-//        /* [in] */ IObjectOutputStream* stream);
+    CARAPI WriteObject(
+        /* [in] */ IObjectOutputStream* stream);
 
 protected:
     /**

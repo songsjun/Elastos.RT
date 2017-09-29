@@ -94,9 +94,9 @@ public:
     CARAPI Shuffle(
         /* [in] */ IList* list);
 
-    // CARAPI Shuffle(
-    //     /* [in] */ IList* list,
-    //     /* [in] */ IRandom* random);
+    CARAPI Shuffle(
+        /* [in] */ IList* list,
+        /* [in] */ IRandom* random);
 
     CARAPI Singleton(
         /* [in] */ IInterface* object,

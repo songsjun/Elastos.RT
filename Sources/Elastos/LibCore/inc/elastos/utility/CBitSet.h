@@ -22,8 +22,8 @@
 
 using Elastos::Core::ICloneable;
 using Elastos::Core::Object;
-//using Elastos::IO::IInt64Buffer;
-//using Elastos::IO::IByteBuffer;
+using Elastos::IO::IInt64Buffer;
+using Elastos::IO::IByteBuffer;
 using Elastos::IO::ISerializable;
 
 namespace Elastos {
@@ -279,11 +279,9 @@ public:
      * sequence of bits. This method does not alter the {@code LongBuffer}.
      * @hide 1.7
      */
-#if 0
     static CARAPI ValueOf(
         /* [in] */ IInt64Buffer* int64Arr,
         /* [out] */ IBitSet** bs);
-#endif
 
     /**
      * Equivalent to {@code BitSet.valueOf(ByteBuffer.wrap(bytes))}.
@@ -298,11 +296,9 @@ public:
      * sequence of bits. This method does not alter the {@code ByteBuffer}.
      * @hide 1.7
      */
-#if 0
     static CARAPI ValueOf(
         /* [in] */ IByteBuffer* byteArr,
         /* [out] */ IBitSet** bs);
-#endif
 
     /**
      * Returns a new {@code long[]} containing a little-endian representation of the bits of

@@ -18,7 +18,7 @@
 #define __ELASTOS_UTILITY_CONCURRENT_ELASTOS_UTILITY_CSEMAPHORE_H__
 
 #include "_Elastos_Utility_Concurrent_CSemaphore.h"
-#include "AbstractQueuedSynchronizer.h"
+#include "locks/AbstractQueuedSynchronizer.h"
 #include "Object.h"
 
 using Elastos::IO::ISerializable;
@@ -111,10 +111,10 @@ public:
 
     CAR_OBJECT_DECL()
 
-    constructor(
+    CARAPI constructor(
         /* [in] */ Int32 permits);
 
-    constructor(
+    CARAPI constructor(
         /* [in] */ Int32 permits,
         /* [in] */ Boolean fair);
 

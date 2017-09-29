@@ -117,24 +117,24 @@ module
     merge("../../../car/elastos/utility/spi/ILocaleNameProvider.car");
     merge("../../../car/elastos/utility/spi/ITimeZoneNameProvider.car");
 
-    // interface Libcore.ICU.ILocale;
-    // interface Elastos.Core.ICloneable;
-    // interface Elastos.Core.IAppendable;
-    // interface Elastos.Core.IComparator;
-    // interface Elastos.Core.IComparable;
-    // interface Elastos.IO.ISerializable;
-    // interface Elastos.IO.IFile;
-    // interface Elastos.IO.IInputStream;
-    // interface Elastos.IO.IOutputStream;
-    // interface Elastos.IO.IPrintStream;
-    // interface Elastos.IO.IFlushable;
-    // interface Elastos.IO.ICloseable;
-    // interface Elastos.IO.IReadable;
-    // interface Elastos.IO.IReader;
-    // interface Elastos.IO.Channels.IReadableByteChannel;
+    interface Libcore.ICU.ILocale;
+    interface Elastos.Core.ICloneable;
+    interface Elastos.Core.IAppendable;
+    interface Elastos.Core.IComparator;
+    interface Elastos.Core.IComparable;
+    interface Elastos.IO.ISerializable;
+    interface Elastos.IO.IFile;
+    interface Elastos.IO.IInputStream;
+    interface Elastos.IO.IOutputStream;
+    interface Elastos.IO.IPrintStream;
+    interface Elastos.IO.IFlushable;
+    interface Elastos.IO.ICloseable;
+    interface Elastos.IO.IReadable;
+    interface Elastos.IO.IReader;
+    interface Elastos.IO.Channels.IReadableByteChannel;
 
-    // namespace Elastos {
-    // namespace Utility {
+    namespace Elastos {
+    namespace Utility {
 
     // [deprecated]
     // class CBitSet {
@@ -775,279 +775,279 @@ module
     //     interface IRandomAccess;
     // }
 
-    // singleton class CCollections {
-    //     interface ICollections;
-    // }
+    singleton class CCollections {
+        interface ICollections;
+    }
 
-    // class CFormatter {
-    //     /**
-    //      * Constructs a {@code Formatter}.
-    //      *
-    //      * <p>The output is written to a {@code StringBuilder} which can be acquired by invoking
-    //      * {@link #out()} and whose content can be obtained by calling {@code toString}.
-    //      *
-    //      * <p>The {@code Locale} used is the user's default locale.
-    //      * See "<a href="../util/Locale.html#default_locale">Be wary of the default locale</a>".
-    //      */
-    //     constructor();
+    class CFormatter {
+        /**
+         * Constructs a {@code Formatter}.
+         *
+         * <p>The output is written to a {@code StringBuilder} which can be acquired by invoking
+         * {@link #out()} and whose content can be obtained by calling {@code toString}.
+         *
+         * <p>The {@code Locale} used is the user's default locale.
+         * See "<a href="../util/Locale.html#default_locale">Be wary of the default locale</a>".
+         */
+        constructor();
 
-    //     /**
-    //      * Constructs a {@code Formatter} whose output will be written to the
-    //      * specified {@code Appendable}.
-    //      *
-    //      * <p>The {@code Locale} used is the user's default locale.
-    //      * See "<a href="../util/Locale.html#default_locale">Be wary of the default locale</a>".
-    //      *
-    //      * @param a
-    //      *            the output destination of the {@code Formatter}. If {@code a} is {@code null},
-    //      *            then a {@code StringBuilder} will be used.
-    //      */
-    //     constructor(
-    //         [in] IAppendable* a);
+        /**
+         * Constructs a {@code Formatter} whose output will be written to the
+         * specified {@code Appendable}.
+         *
+         * <p>The {@code Locale} used is the user's default locale.
+         * See "<a href="../util/Locale.html#default_locale">Be wary of the default locale</a>".
+         *
+         * @param a
+         *            the output destination of the {@code Formatter}. If {@code a} is {@code null},
+         *            then a {@code StringBuilder} will be used.
+         */
+        constructor(
+            [in] IAppendable* a);
 
-    //     /**
-    //      * Constructs a {@code Formatter} with the specified {@code Locale}.
-    //      *
-    //      * <p>The output is written to a {@code StringBuilder} which can be acquired by invoking
-    //      * {@link #out()} and whose content can be obtained by calling {@code toString}.
-    //      *
-    //      * @param l
-    //      *            the {@code Locale} of the {@code Formatter}. If {@code l} is {@code null},
-    //      *            then no localization will be used.
-    //      */
-    //     constructor(
-    //         [in] ILocale* l);
+        /**
+         * Constructs a {@code Formatter} with the specified {@code Locale}.
+         *
+         * <p>The output is written to a {@code StringBuilder} which can be acquired by invoking
+         * {@link #out()} and whose content can be obtained by calling {@code toString}.
+         *
+         * @param l
+         *            the {@code Locale} of the {@code Formatter}. If {@code l} is {@code null},
+         *            then no localization will be used.
+         */
+        constructor(
+            [in] ILocale* l);
 
-    //     /**
-    //      * Constructs a {@code Formatter} with the specified {@code Locale}
-    //      * and whose output will be written to the
-    //      * specified {@code Appendable}.
-    //      *
-    //      * @param a
-    //      *            the output destination of the {@code Formatter}. If {@code a} is {@code null},
-    //      *            then a {@code StringBuilder} will be used.
-    //      * @param l
-    //      *            the {@code Locale} of the {@code Formatter}. If {@code l} is {@code null},
-    //      *            then no localization will be used.
-    //      */
-    //     constructor(
-    //         [in] IAppendable* a,
-    //         [in] ILocale* l);
+        /**
+         * Constructs a {@code Formatter} with the specified {@code Locale}
+         * and whose output will be written to the
+         * specified {@code Appendable}.
+         *
+         * @param a
+         *            the output destination of the {@code Formatter}. If {@code a} is {@code null},
+         *            then a {@code StringBuilder} will be used.
+         * @param l
+         *            the {@code Locale} of the {@code Formatter}. If {@code l} is {@code null},
+         *            then no localization will be used.
+         */
+        constructor(
+            [in] IAppendable* a,
+            [in] ILocale* l);
 
-    //     /**
-    //      * Constructs a {@code Formatter} whose output is written to the specified file.
-    //      *
-    //      * <p>The charset of the {@code Formatter} is the default charset.
-    //      *
-    //      * <p>The {@code Locale} used is the user's default locale.
-    //      * See "<a href="../util/Locale.html#default_locale">Be wary of the default locale</a>".
-    //      *
-    //      * @param fileName
-    //      *            the filename of the file that is used as the output
-    //      *            destination for the {@code Formatter}. The file will be truncated to
-    //      *            zero size if the file exists, or else a new file will be
-    //      *            created. The output of the {@code Formatter} is buffered.
-    //      * @throws FileNotFoundException
-    //      *             if the filename does not denote a normal and writable file,
-    //      *             or if a new file cannot be created, or if any error arises when
-    //      *             opening or creating the file.
-    //      */
-    //     constructor(
-    //         [in] String fileName);
+        /**
+         * Constructs a {@code Formatter} whose output is written to the specified file.
+         *
+         * <p>The charset of the {@code Formatter} is the default charset.
+         *
+         * <p>The {@code Locale} used is the user's default locale.
+         * See "<a href="../util/Locale.html#default_locale">Be wary of the default locale</a>".
+         *
+         * @param fileName
+         *            the filename of the file that is used as the output
+         *            destination for the {@code Formatter}. The file will be truncated to
+         *            zero size if the file exists, or else a new file will be
+         *            created. The output of the {@code Formatter} is buffered.
+         * @throws FileNotFoundException
+         *             if the filename does not denote a normal and writable file,
+         *             or if a new file cannot be created, or if any error arises when
+         *             opening or creating the file.
+         */
+        constructor(
+             [in] String fileName);
 
-    //     /**
-    //      * Constructs a {@code Formatter} whose output is written to the specified file.
-    //      *
-    //      * <p>The {@code Locale} used is the user's default locale.
-    //      * See "<a href="../util/Locale.html#default_locale">Be wary of the default locale</a>".
-    //      *
-    //      * @param fileName
-    //      *            the filename of the file that is used as the output
-    //      *            destination for the {@code Formatter}. The file will be truncated to
-    //      *            zero size if the file exists, or else a new file will be
-    //      *            created. The output of the {@code Formatter} is buffered.
-    //      * @param csn
-    //      *            the name of the charset for the {@code Formatter}.
-    //      * @throws FileNotFoundException
-    //      *             if the filename does not denote a normal and writable file,
-    //      *             or if a new file cannot be created, or if any error arises when
-    //      *             opening or creating the file.
-    //      * @throws UnsupportedEncodingException
-    //      *             if the charset with the specified name is not supported.
-    //      */
-    //     constructor(
-    //         [in] String fileName,
-    //         [in] String csn);
+        /**
+         * Constructs a {@code Formatter} whose output is written to the specified file.
+         *
+         * <p>The {@code Locale} used is the user's default locale.
+         * See "<a href="../util/Locale.html#default_locale">Be wary of the default locale</a>".
+         *
+         * @param fileName
+         *            the filename of the file that is used as the output
+         *            destination for the {@code Formatter}. The file will be truncated to
+         *            zero size if the file exists, or else a new file will be
+         *            created. The output of the {@code Formatter} is buffered.
+         * @param csn
+         *           the name of the charset for the {@code Formatter}.
+         * @throws FileNotFoundException
+         *            if the filename does not denote a normal and writable file,
+         *            or if a new file cannot be created, or if any error arises when
+         *            opening or creating the file.
+         * @throws UnsupportedEncodingException
+         *             if the charset with the specified name is not supported.
+         */
+        constructor(
+            [in] String fileName,
+            [in] String csn);
 
-    //     /**
-    //      * Constructs a {@code Formatter} with the given {@code Locale} and charset,
-    //      * and whose output is written to the specified file.
-    //      *
-    //      * @param fileName
-    //      *            the filename of the file that is used as the output
-    //      *            destination for the {@code Formatter}. The file will be truncated to
-    //      *            zero size if the file exists, or else a new file will be
-    //      *            created. The output of the {@code Formatter} is buffered.
-    //      * @param csn
-    //      *            the name of the charset for the {@code Formatter}.
-    //      * @param l
-    //      *            the {@code Locale} of the {@code Formatter}. If {@code l} is {@code null},
-    //      *            then no localization will be used.
-    //      * @throws FileNotFoundException
-    //      *             if the filename does not denote a normal and writable file,
-    //      *             or if a new file cannot be created, or if any error arises when
-    //      *             opening or creating the file.
-    //      * @throws UnsupportedEncodingException
-    //      *             if the charset with the specified name is not supported.
-    //      */
-    //     constructor(
-    //         [in] String fileName,
-    //         [in] String csn,
-    //         [in] ILocale* l);
+        /**
+         * Constructs a {@code Formatter} with the given {@code Locale} and charset,
+         * and whose output is written to the specified file.
+         *
+         * @param fileName
+         *            the filename of the file that is used as the output
+         *            destination for the {@code Formatter}. The file will be truncated to
+         *            zero size if the file exists, or else a new file will be
+         *            created. The output of the {@code Formatter} is buffered.
+         * @param csn
+         *            the name of the charset for the {@code Formatter}.
+         * @param l
+         *            the {@code Locale} of the {@code Formatter}. If {@code l} is {@code null},
+         *            then no localization will be used.
+         * @throws FileNotFoundException
+         *             if the filename does not denote a normal and writable file,
+         *             or if a new file cannot be created, or if any error arises when
+         *             opening or creating the file.
+         * @throws UnsupportedEncodingException
+         *             if the charset with the specified name is not supported.
+         */
+        constructor(
+            [in] String fileName,
+            [in] String csn,
+            [in] ILocale* l);
 
-    //     /**
-    //      * Constructs a {@code Formatter} whose output is written to the specified {@code File}.
-    //      *
-    //      * The charset of the {@code Formatter} is the default charset.
-    //      *
-    //      * <p>The {@code Locale} used is the user's default locale.
-    //      * See "<a href="../util/Locale.html#default_locale">Be wary of the default locale</a>".
-    //      *
-    //      * @param file
-    //      *            the {@code File} that is used as the output destination for the
-    //      *            {@code Formatter}. The {@code File} will be truncated to zero size if the {@code File}
-    //      *            exists, or else a new {@code File} will be created. The output of the
-    //      *            {@code Formatter} is buffered.
-    //      * @throws FileNotFoundException
-    //      *             if the {@code File} is not a normal and writable {@code File}, or if a
-    //      *             new {@code File} cannot be created, or if any error rises when opening or
-    //      *             creating the {@code File}.
-    //      */
-    //     constructor(
-    //         [in] IFile* file);
+        /**
+         * Constructs a {@code Formatter} whose output is written to the specified {@code File}.
+         *
+         * The charset of the {@code Formatter} is the default charset.
+         *
+         * <p>The {@code Locale} used is the user's default locale.
+         * See "<a href="../util/Locale.html#default_locale">Be wary of the default locale</a>".
+         *
+         * @param file
+         *            the {@code File} that is used as the output destination for the
+         *            {@code Formatter}. The {@code File} will be truncated to zero size if the {@code File}
+         *            exists, or else a new {@code File} will be created. The output of the
+         *            {@code Formatter} is buffered.
+         * @throws FileNotFoundException
+         *             if the {@code File} is not a normal and writable {@code File}, or if a
+         *             new {@code File} cannot be created, or if any error rises when opening or
+         *             creating the {@code File}.
+         */
+        constructor(
+             [in] IFile* file);
 
-    //     *
-    //      * Constructs a {@code Formatter} with the given charset,
-    //      * and whose output is written to the specified {@code File}.
-    //      *
-    //      * <p>The {@code Locale} used is the user's default locale.
-    //      * See "<a href="../util/Locale.html#default_locale">Be wary of the default locale</a>".
-    //      *
-    //      * @param file
-    //      *            the {@code File} that is used as the output destination for the
-    //      *            {@code Formatter}. The {@code File} will be truncated to zero size if the {@code File}
-    //      *            exists, or else a new {@code File} will be created. The output of the
-    //      *            {@code Formatter} is buffered.
-    //      * @param csn
-    //      *            the name of the charset for the {@code Formatter}.
-    //      * @throws FileNotFoundException
-    //      *             if the {@code File} is not a normal and writable {@code File}, or if a
-    //      *             new {@code File} cannot be created, or if any error rises when opening or
-    //      *             creating the {@code File}.
-    //      * @throws UnsupportedEncodingException
-    //      *             if the charset with the specified name is not supported.
+        /**
+         * Constructs a {@code Formatter} with the given charset,
+         * and whose output is written to the specified {@code File}.
+         *
+         * <p>The {@code Locale} used is the user's default locale.
+         * See "<a href="../util/Locale.html#default_locale">Be wary of the default locale</a>".
+         *
+         * @param file
+         *            the {@code File} that is used as the output destination for the
+         *            {@code Formatter}. The {@code File} will be truncated to zero size if the {@code File}
+         *            exists, or else a new {@code File} will be created. The output of the
+         *            {@code Formatter} is buffered.
+         * @param csn
+         *            the name of the charset for the {@code Formatter}.
+         * @throws FileNotFoundException
+         *             if the {@code File} is not a normal and writable {@code File}, or if a
+         *             new {@code File} cannot be created, or if any error rises when opening or
+         *             creating the {@code File}.
+         * @throws UnsupportedEncodingException
+         *             if the charset with the specified name is not supported.
+         */
+        constructor(
+            [in] IFile* file,
+            [in] String csn);
 
-    //     constructor(
-    //         [in] IFile* file,
-    //         [in] String csn);
+        /**
+         * Constructs a {@code Formatter} with the given {@code Locale} and charset,
+         * and whose output is written to the specified {@code File}.
+         *
+         * @param file
+         *            the {@code File} that is used as the output destination for the
+         *            {@code Formatter}. The {@code File} will be truncated to zero size if the {@code File}
+         *            exists, or else a new {@code File} will be created. The output of the
+         *            {@code Formatter} is buffered.
+         * @param csn
+         *            the name of the charset for the {@code Formatter}.
+         * @param l
+         *            the {@code Locale} of the {@code Formatter}. If {@code l} is {@code null},
+         *            then no localization will be used.
+         * @throws FileNotFoundException
+         *             if the {@code File} is not a normal and writable {@code File}, or if a
+         *             new {@code File} cannot be created, or if any error rises when opening or
+         *             creating the {@code File}.
+         * @throws UnsupportedEncodingException
+         *             if the charset with the specified name is not supported.
+         */
+        constructor(
+            [in] IFile* file,
+            [in] String csn,
+            [in] ILocale* l);
 
-    //     /**
-    //      * Constructs a {@code Formatter} with the given {@code Locale} and charset,
-    //      * and whose output is written to the specified {@code File}.
-    //      *
-    //      * @param file
-    //      *            the {@code File} that is used as the output destination for the
-    //      *            {@code Formatter}. The {@code File} will be truncated to zero size if the {@code File}
-    //      *            exists, or else a new {@code File} will be created. The output of the
-    //      *            {@code Formatter} is buffered.
-    //      * @param csn
-    //      *            the name of the charset for the {@code Formatter}.
-    //      * @param l
-    //      *            the {@code Locale} of the {@code Formatter}. If {@code l} is {@code null},
-    //      *            then no localization will be used.
-    //      * @throws FileNotFoundException
-    //      *             if the {@code File} is not a normal and writable {@code File}, or if a
-    //      *             new {@code File} cannot be created, or if any error rises when opening or
-    //      *             creating the {@code File}.
-    //      * @throws UnsupportedEncodingException
-    //      *             if the charset with the specified name is not supported.
-    //      */
-    //     constructor(
-    //         [in] IFile* file,
-    //         [in] String csn,
-    //         [in] ILocale* l);
+        /**
+         * Constructs a {@code Formatter} whose output is written to the specified {@code OutputStream}.
+         *
+         * <p>The charset of the {@code Formatter} is the default charset.
+         *
+         * <p>The {@code Locale} used is the user's default locale.
+         * See "<a href="../util/Locale.html#default_locale">Be wary of the default locale</a>".
+         *
+         * @param os
+         *            the stream to be used as the destination of the {@code Formatter}.
+         */
+        constructor(
+            [in] IOutputStream* os);
 
-    //     /**
-    //      * Constructs a {@code Formatter} whose output is written to the specified {@code OutputStream}.
-    //      *
-    //      * <p>The charset of the {@code Formatter} is the default charset.
-    //      *
-    //      * <p>The {@code Locale} used is the user's default locale.
-    //      * See "<a href="../util/Locale.html#default_locale">Be wary of the default locale</a>".
-    //      *
-    //      * @param os
-    //      *            the stream to be used as the destination of the {@code Formatter}.
-    //      */
-    //     constructor(
-    //         [in] IOutputStream* os);
+        /**
+         * Constructs a {@code Formatter} with the given charset,
+         * and whose output is written to the specified {@code OutputStream}.
+         *
+         * <p>The {@code Locale} used is the user's default locale.
+         * See "<a href="../util/Locale.html#default_locale">Be wary of the default locale</a>".
+         *
+         * @param os
+         *            the stream to be used as the destination of the {@code Formatter}.
+         * @param csn
+         *            the name of the charset for the {@code Formatter}.
+         * @throws UnsupportedEncodingException
+         *             if the charset with the specified name is not supported.
+         */
+        constructor(
+            [in] IOutputStream* os,
+            [in] String csn);
 
-    //     /**
-    //      * Constructs a {@code Formatter} with the given charset,
-    //      * and whose output is written to the specified {@code OutputStream}.
-    //      *
-    //      * <p>The {@code Locale} used is the user's default locale.
-    //      * See "<a href="../util/Locale.html#default_locale">Be wary of the default locale</a>".
-    //      *
-    //      * @param os
-    //      *            the stream to be used as the destination of the {@code Formatter}.
-    //      * @param csn
-    //      *            the name of the charset for the {@code Formatter}.
-    //      * @throws UnsupportedEncodingException
-    //      *             if the charset with the specified name is not supported.
-    //      */
-    //     constructor(
-    //         [in] IOutputStream* os,
-    //         [in] String csn);
+        /**
+         * Constructs a {@code Formatter} with the given {@code Locale} and charset,
+         * and whose output is written to the specified {@code OutputStream}.
+         *
+         * @param os
+         *            the stream to be used as the destination of the {@code Formatter}.
+         * @param csn
+         *            the name of the charset for the {@code Formatter}.
+         * @param l
+         *            the {@code Locale} of the {@code Formatter}. If {@code l} is {@code null},
+         *            then no localization will be used.
+         * @throws UnsupportedEncodingException
+         *             if the charset with the specified name is not supported.
+         */
+        constructor(
+            [in] IOutputStream* os,
+            [in] String csn,
+            [in] ILocale* l);
 
-    //     /**
-    //      * Constructs a {@code Formatter} with the given {@code Locale} and charset,
-    //      * and whose output is written to the specified {@code OutputStream}.
-    //      *
-    //      * @param os
-    //      *            the stream to be used as the destination of the {@code Formatter}.
-    //      * @param csn
-    //      *            the name of the charset for the {@code Formatter}.
-    //      * @param l
-    //      *            the {@code Locale} of the {@code Formatter}. If {@code l} is {@code null},
-    //      *            then no localization will be used.
-    //      * @throws UnsupportedEncodingException
-    //      *             if the charset with the specified name is not supported.
-    //      */
-    //     constructor(
-    //         [in] IOutputStream* os,
-    //         [in] String csn,
-    //         [in] ILocale* l);
+        /**
+         * Constructs a {@code Formatter} whose output is written to the specified {@code PrintStream}.
+         *
+         * <p>The charset of the {@code Formatter} is the default charset.
+         *
+         * <p>The {@code Locale} used is the user's default locale.
+         * See "<a href="../util/Locale.html#default_locale">Be wary of the default locale</a>".
+         *
+         * @param ps
+         *            the {@code PrintStream} used as destination of the {@code Formatter}. If
+         *            {@code ps} is {@code null}, then a {@code NullPointerException} will
+         *            be raised.
+         */
+        constructor(
+            [in] IPrintStream* ps);
 
-    //     /**
-    //      * Constructs a {@code Formatter} whose output is written to the specified {@code PrintStream}.
-    //      *
-    //      * <p>The charset of the {@code Formatter} is the default charset.
-    //      *
-    //      * <p>The {@code Locale} used is the user's default locale.
-    //      * See "<a href="../util/Locale.html#default_locale">Be wary of the default locale</a>".
-    //      *
-    //      * @param ps
-    //      *            the {@code PrintStream} used as destination of the {@code Formatter}. If
-    //      *            {@code ps} is {@code null}, then a {@code NullPointerException} will
-    //      *            be raised.
-    //      */
-    //     constructor(
-    //         [in] IPrintStream* ps);
-
-    //     interface IFormatter;
-    //     interface ICloseable;
-    //     interface IFlushable;
-    // }
+        interface IFormatter;
+        interface ICloseable;
+        interface IFlushable;
+     }
 
     // singleton class CCurrencyHelper {
     //     interface ICurrencyHelper;
@@ -1821,48 +1821,48 @@ module
     //     interface IObservable;
     // }
 
-    // } // namespace Utility
-    // } // namespace Elastos
+    } // namespace Utility
+    } // namespace Elastos
 
-    // namespace Elastos {
-    // namespace Utility {
-    // namespace Regex {
+    namespace Elastos {
+    namespace Utility {
+    namespace Regex {
 
-    // /**
-    //  * The result of applying a {@code Pattern} to a given input. See {@link Pattern} for
-    //  * example uses.
-    //  */
-    // class CMatcher {
-    //     /**
-    //      * Creates a matcher for a given combination of pattern and input. Both
-    //      * elements can be changed later on.
-    //      *
-    //      * @param pattern
-    //      *            the pattern to use.
-    //      * @param input
-    //      *            the input to use.
-    //      */
-    //     constructor(
-    //         [in] IPattern* pattern,
-    //         [in] Elastos.Core.ICharSequence* inputSeq);
+    /**
+     * The result of applying a {@code Pattern} to a given input. See {@link Pattern} for
+     * example uses.
+     */
+    class CMatcher {
+        /**
+         * Creates a matcher for a given combination of pattern and input. Both
+         * elements can be changed later on.
+         *
+         * @param pattern
+         *            the pattern to use.
+         * @param input
+         *            the input to use.
+         */
+        constructor(
+            [in] IPattern* pattern,
+            [in] Elastos.Core.ICharSequence* inputSeq);
 
-    //     interface IMatcher;
-    // }
+        interface IMatcher;
+    }
 
-    // singleton class CMatcherHelper {
-    //     interface IMatcherHelper;
-    // }
+    singleton class CMatcherHelper {
+        interface IMatcherHelper;
+    }
 
-    // singleton class CSplitter {
-    //     interface ISplitter;
-    // }
+    singleton class CSplitter {
+        interface ISplitter;
+    }
 
-    // singleton class CPatternHelper {
-    //     interface IPatternHelper;
-    // }
+    singleton class CPatternHelper {
+        interface IPatternHelper;
+    }
 
-    // } // namespace Regex
-    // } // namesapce Utility
-    // } // namespace Elastos
+    } // namespace Regex
+    } // namesapce Utility
+    } // namespace Elastos
 
 }

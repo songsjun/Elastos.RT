@@ -18,11 +18,11 @@
 #include "CArrayList.h"
 
 using Elastos::Core::EIID_ICloneable;
-// using Elastos::IO::IObjectInput;
-// using Elastos::IO::IObjectOutput;
+using Elastos::IO::IObjectInput;
+using Elastos::IO::IObjectOutput;
 using Elastos::IO::EIID_ISerializable;
-// using Elastos::IO::IDataOutput;
-// using Elastos::IO::IDataInput;
+using Elastos::IO::IDataOutput;
+using Elastos::IO::IDataInput;
 
 namespace Elastos {
 namespace Utility {
@@ -1042,7 +1042,6 @@ ECode CLinkedList::ToArray(
     return NOERROR;
 }
 
-#if 0
 ECode CLinkedList::WriteObject(
     /* [in] */ IObjectOutputStream* stream)
 {
@@ -1090,7 +1089,6 @@ ECode CLinkedList::ReadObject(
     // mVoidLink->mPrevious = link;
     return NOERROR;
 }
-#endif
 
 ECode CLinkedList::Element(
         /* [out] */ IInterface** e)

@@ -56,7 +56,7 @@ ECode CAttributeTypeAndValue::ASN1TypeCls::constructor(
     return ASN1Type::constructor(tag);
 }
 
-CAttributeTypeAndValue::ASN1TypeCls::CheckTag(
+ECode CAttributeTypeAndValue::ASN1TypeCls::CheckTag(
     /* [in] */ Int32 tag,
     /* [out] */ Boolean* result)
 {
@@ -123,14 +123,14 @@ ECode CAttributeTypeAndValue::ASN1TypeCls::EncodeASN(
     CAttributeValue* av = (CAttributeValue*)IAttributeValue::Probe(out->mContent);
 
     if (av->mEncoded != NULL) {
-        out->mContent = CoreUtils::ConvertByteArray(av->mEncoded);
+        out->mContent = TO_IINTERFACE(CoreUtils::ConvertByteArray(av->mEncoded));
         out->EncodeANY();
     }
     else {
         Int32 tag = 0;
         av->GetTag(&tag);
         out->EncodeTag(tag);
-        out->mContent = CoreUtils::ConvertByteArray(av->mBytes);
+        out->mContent = TO_IINTERFACE(CoreUtils::ConvertByteArray(av->mBytes));
         out->EncodeString();
     }
     return NOERROR;
@@ -149,7 +149,7 @@ ECode CAttributeTypeAndValue::ASN1TypeCls::SetEncodingContent(
         Int32 tag = 0;
         av->GetTag(&tag);
         if (tag == IASN1Constants::TAG_UTF8STRING) {
-            out->mContent = CoreUtils::Convert(av->mRawString);
+            out->mContent = TO_IINTERFACE(CoreUtils::Convert(av->mRawString));
             IASN1Type::Probe(ASN1StringType::UTF8STRING)->SetEncodingContent(out);
             AutoPtr<IArrayOf> array = IArrayOf::Probe(out->mContent);
             Int32 size = 0;

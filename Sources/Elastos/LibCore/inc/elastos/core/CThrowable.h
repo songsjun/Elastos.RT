@@ -21,8 +21,8 @@
 #include "_Elastos_Core_CThrowable.h"
 #include "Object.h"
 
-//using Elastos::IO::IPrintStream;
-//using Elastos::IO::IPrintWriter;
+using Elastos::IO::IPrintStream;
+using Elastos::IO::IPrintWriter;
 using Elastos::Utility::IList;
 
 namespace Elastos {
@@ -146,8 +146,8 @@ public:
      * @param err
      *            the stream to write the stack trace on.
      */
-//    CARAPI PrintStackTrace(
-//        /* [in] */ IPrintStream* err);
+    CARAPI PrintStackTrace(
+        /* [in] */ IPrintStream* err);
 
     /**
      * Writes a printable representation of this {@code Throwable}'s stack trace
@@ -158,8 +158,8 @@ public:
      * @param err
      *            the writer to write the stack trace on.
      */
-//    CARAPI PrintStackTrace(
-//        /* [in] */ IPrintWriter* err);
+    CARAPI PrintStackTrace(
+        /* [in] */ IPrintWriter* err);
 
     CARAPI PrintStackTrace(
         /* [in] */ IAppendable* err,

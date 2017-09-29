@@ -82,8 +82,7 @@ Int64 StrictMath::Abs(
 Double StrictMath::Acos(
     /* [in] */ Double d)
 {
-//    return ieee_acos(d);
-        return ieee_acos(d);
+    return ieee_acos(d);
 }
 
 Double StrictMath::Asin(

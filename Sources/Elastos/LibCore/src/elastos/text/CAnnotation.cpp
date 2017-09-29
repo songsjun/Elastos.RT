@@ -20,6 +20,7 @@
 
 using Elastos::Core::StringBuilder;
 using Elastos::Core::StringUtils;
+using Elastos::Core::IInteger32;
 
 namespace Elastos {
 namespace Text {
@@ -55,7 +56,9 @@ ECode CAnnotation::ToString(
         obj->ToString(&objInfo);
     }
     else {
-        objInfo = StringUtils::ToHexString((Int32)mValue.Get());
+        Int32 data;
+        IInteger32::Probe(mValue)->GetValue(&data);
+        objInfo = StringUtils::ToHexString(data);
     }
     sb.Append(objInfo);
 

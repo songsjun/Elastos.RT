@@ -14,11 +14,12 @@
 // limitations under the License.
 //=========================================================================
 
+#include "Elastos.CoreLibrary.Utility.h"
 #include "Thread.h"
 #include "ThreadGroup.h"
 #include "ElaMath.h"
 #include "AutoLock.h"
-// #include "CSystem.h"
+#include "CSystem.h"
 #include <sys/time.h>
 
 // #include "elastos/utility/CArrayList.h"
@@ -76,7 +77,7 @@ const ThreadState Thread::STATE_MAP[] = {
 CAR_INTERFACE_IMPL(Thread, Runnable, IThread)
 
 Thread::Thread()
-    : mNativeThread(NULL)
+    : mNativeThread(nullptr)
     , mDaemon(FALSE)
     , mStackSize(0)
     , mHasBeenStarted(FALSE)

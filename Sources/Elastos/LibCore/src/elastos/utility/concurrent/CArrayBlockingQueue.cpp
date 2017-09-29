@@ -23,6 +23,7 @@
 using Elastos::IO::EIID_ISerializable;
 using Elastos::Core::StringBuilder;
 using Elastos::Core::StringUtils;
+using Elastos::Core::IInteger32;
 using Elastos::Utility::Concurrent::Locks::CReentrantLock;
 using Elastos::Utility::Concurrent::Locks::ILock;
 
@@ -519,7 +520,9 @@ ECode CArrayBlockingQueue::ToString(
             sb += "(this Collection)";
         }
         else {
-            sb += StringUtils::ToHexString((Int32)e.Get());
+            Int32 data;
+            IInteger32::Probe(e)->GetValue(&data);
+            sb += StringUtils::ToHexString(data);
         }
         if (--k == 0) {
             sb += "]";

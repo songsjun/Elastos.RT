@@ -1275,7 +1275,7 @@ ECode Database::_Exec(
 #endif
 #endif
         h->cb = oldcb;
-        if (rc != SQLITE_OK) {
+        if (rc != IConstants::SQLITE_OK) {
             char msg[128];
 
             mError_code = rc;
@@ -1306,7 +1306,7 @@ ECode Database::_Exec(
     }
     if (h) {
     if (h->sqlite) {
-        Int32 rc = SQLITE_ERROR, nargs, i = 0;
+        Int32 rc = IConstants::SQLITE_ERROR, nargs, i = 0;
         char *err = NULL, *p = NULL;
         const char *str = sql.string();
         String sqlstr;
@@ -1514,7 +1514,7 @@ ECode Database::_Exec(
         sqlstr = String(NULL);
         Freep(cargv);
         h->cb = oldcb;
-        if (rc != SQLITE_OK) {
+        if (rc != IConstants::SQLITE_OK) {
             char msg[128];
             if (!err) {
                 snprintf(msg, 128, "error %d in sqlite*_exec", rc);
@@ -1792,7 +1792,7 @@ static ECode Mkfunc_common(handle * ihandle,AutoPtr<IDatabase> obj,Int32 isagg, 
                       isagg ? Call3_final : NULL);
 #endif
 #endif
-    if (ret != SQLITE_OK) {
+    if (ret != IConstants::SQLITE_OK) {
         PRINT_FILE_LINE_EX("sqlite3_create_function/aggregate error:%p \n",ret)
         return E_SQL_EXCEPTION;
     }
@@ -2124,7 +2124,7 @@ Int32 Database::_Status(
     /* [in] */ ArrayOf<Int32>* info,
     /* [in] */ Boolean flag)
 {
-    Int32 ret = SQLITE_ERROR;
+    Int32 ret = IConstants::SQLITE_ERROR;
 #if HAVE_SQLITE3_STATUS
     Int32 data[2] = { 0, 0 };
     AutoPtr<ArrayOf<Int32> > jdata = ArrayOf<Int32>::Alloc(2);
@@ -2146,7 +2146,7 @@ Int32 Database::_DbStatus(
     /* [in] */ ArrayOf<Int32> * info,
     /* [in] */ Boolean flag)
 {
-    Int32 ret = SQLITE_ERROR;
+    Int32 ret = IConstants::SQLITE_ERROR;
 #if HAVE_SQLITE3_DB_STATUS
     handle *h = (handle *)mHandle;
     Int32 data[2] = { 0, 0 };

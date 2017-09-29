@@ -21,10 +21,10 @@ module
     merge("math/IBigInteger.car");
     merge("math/RoundingMode.car");
 
-    //interface Elastos.IO.ISerializable;
+    interface Elastos.IO.ISerializable;
     interface Elastos.Core.INumber;
     interface Elastos.Core.IComparable;
-    //interface Elastos.Utility.IRandom;
+    interface Elastos.Utility.IRandom;
 
     namespace Elastos {
     namespace Math {
@@ -100,7 +100,7 @@ module
             [in] Int64 int64Val,
             [in] IMathContext* mc);
 
-        //interface ISerializable;
+        interface ISerializable;
         interface INumber;
         interface IComparable;
         interface IBigDecimal;
@@ -114,7 +114,6 @@ module
     class CBigInteger {
         constructor();
 
-/*
         constructor(
             [in] Int32 numBits,
             [in] IRandom* random);
@@ -123,7 +122,7 @@ module
             [in] Int32 bitLength,
             [in] Int32 certainty,
             [in] IRandom* random);
-*/
+
         constructor(
             [in] Int32 sign,
             [in] Int64 value);
@@ -147,7 +146,7 @@ module
         constructor(
             [in] ArrayOf<Byte> arrValue);
 
-        //interface ISerializable;
+        interface ISerializable;
         interface INumber;
         interface IComparable;
         interface IBigInteger;
@@ -165,7 +164,7 @@ module
             [in] Int32 precision,
             [in] RoundingMode roundingMode);
 
-        //interface ISerializable;
+        interface ISerializable;
         interface IMathContext;
     }
 

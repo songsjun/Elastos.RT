@@ -17,7 +17,7 @@
 #ifndef __ELASTOSX_NET_SSL_SSLSERVERSOCKETFACTORY_H__
 #define __ELASTOSX_NET_SSL_SSLSERVERSOCKETFACTORY_H__
 
-#include "ServerSocketFactory.h"
+#include "elastosx/net/ServerSocketFactory.h"
 
 using Elastosx::Net::IServerSocketFactory;
 

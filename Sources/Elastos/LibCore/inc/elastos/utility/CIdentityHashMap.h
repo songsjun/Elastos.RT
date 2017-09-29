@@ -23,9 +23,9 @@
 #include "AbstractSet.h"
 #include "AbstractCollection.h"
 
-//using Elastos::IO::IObjectInputStream;
-//using Elastos::IO::IObjectOutputStream;
-//using Elastos::IO::IObjectStreamField;
+using Elastos::IO::IObjectInputStream;
+using Elastos::IO::IObjectOutputStream;
+using Elastos::IO::IObjectStreamField;
 
 namespace Elastos {
 namespace Utility {
@@ -508,12 +508,12 @@ private:
 
     CARAPI ComputeMaxSize();
 
-//    CARAPI WriteObject(
-//        /* [in] */ IObjectOutputStream* stream);
+    CARAPI WriteObject(
+        /* [in] */ IObjectOutputStream* stream);
 
     // @SuppressWarnings("unchecked")
-//    CARAPI ReadObject(
-//        /* [in] */ IObjectInputStream* stream);
+    CARAPI ReadObject(
+        /* [in] */ IObjectInputStream* stream);
 
     CARAPI PutAllImpl(
         /* [in] */ IMap* map);

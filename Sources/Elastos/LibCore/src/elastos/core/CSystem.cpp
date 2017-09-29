@@ -222,8 +222,7 @@ ECode CSystem::IdentityHashCode(
 {
     VALIDATE_NOT_NULL(value);
 
-    *value = (Int32)anObject;
-    return NOERROR;
+    return IInteger32::Probe(anObject)->GetValue(value);
 }
 
 ECode CSystem::GetLineSeparator(

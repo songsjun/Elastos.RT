@@ -14,7 +14,7 @@
 // limitations under the License.
 //=========================================================================
 
-//#include "Elastos.CoreLibrary.Utility.h"
+#include "Elastos.CoreLibrary.Utility.h"
 #include "CBigInteger.h"
 #include "Conversion.h"
 #include "BitLevel.h"
@@ -25,7 +25,6 @@
 #include "StringUtils.h"
 #include "AutoLock.h"
 
-#include <elastos/core/AutoLock.h>
 using Elastos::Core::AutoLock;
 using Elastos::Core::Math;
 using Elastos::Core::Character;
@@ -81,7 +80,6 @@ ECode CBigInteger::constructor(
     return NOERROR;
 }
 
-#if 0
 ECode CBigInteger::constructor(
     /* [in] */ Int32 numBits,
     /* [in] */ IRandom* random)
@@ -133,7 +131,8 @@ ECode CBigInteger::constructor(
         AutoPtr<BigInt> prime = new BigInt();
         prime->PutULongInt(candidate, FALSE);
         SetBigInt(prime);
-    } else {
+    } 
+    else {
         // We need a loop here to work around an OpenSSL bug; http://b/8588028.
         Int32 length;
         do {
@@ -145,7 +144,6 @@ ECode CBigInteger::constructor(
 
     return NOERROR;
 }
-#endif
 
 Boolean CBigInteger::IsSmallPrime(
     /* [in] */ Int32 x)
@@ -277,7 +275,8 @@ AutoPtr<BigInt> CBigInteger::GetBigInt()
         return mBigInt;
     }
 
-    {    AutoLock syncLock(this);
+    {    
+        AutoLock syncLock(this);
         if (mNativeIsValid) {
             return mBigInt;
         }
@@ -1080,7 +1079,6 @@ ECode CBigInteger::NextProbablePrime(
     return Primality::NextProbablePrime(this, result);
 }
 
-#if 0
 ECode CBigInteger::ProbablePrime(
     /* [in] */ Int32 bitLength,
     /* [in] */ IRandom* random,
@@ -1090,7 +1088,6 @@ ECode CBigInteger::ProbablePrime(
 
     return CBigInteger::New(bitLength, 100, random, result);
 }
-#endif
 
 ECode CBigInteger::TwosComplement(
     /* [out, callee] */ ArrayOf<Byte>** bytes)

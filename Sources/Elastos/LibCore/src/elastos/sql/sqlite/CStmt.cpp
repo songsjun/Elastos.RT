@@ -669,7 +669,7 @@ ECode CStmt::Column(
     Int32  type = 0;
     ColumnType(col,&type);
     switch (type) {
-        case SQLITE_INTEGER:
+        case IConstants::SQLITE_INTEGER:
             {
                 Int64 value = 0;
                 ColumnLong(col, &value);
@@ -678,7 +678,7 @@ ECode CStmt::Column(
                 REFCOUNT_ADD(*obj)
             }
             break;
-        case SQLITE_FLOAT:
+        case IConstants::SQLITE_FLOAT:
             {
                 Double value = 0.0;
                 ColumnDouble(col,&value);
@@ -687,7 +687,7 @@ ECode CStmt::Column(
                 REFCOUNT_ADD(*obj)
             }
             break;
-        case SQLITE_BLOB:
+        case IConstants::SQLITE_BLOB:
             {
                 AutoPtr<ArrayOf<Byte> > value;
                 ColumnBytes(col,(ArrayOf<Byte>**)&value);
@@ -701,7 +701,7 @@ ECode CStmt::Column(
                 REFCOUNT_ADD(*obj)
             }
             break;
-        case SQLITE3_TEXT:
+        case IConstants::SQLITE3_TEXT:
             {
                 String value;
                 ColumnString(col,&value);

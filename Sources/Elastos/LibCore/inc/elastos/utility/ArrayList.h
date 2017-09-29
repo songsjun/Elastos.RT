@@ -20,8 +20,8 @@
 #include "elastos/utility/AbstractList.h"
 
 using Elastos::Core::ICloneable;
-//using Elastos::IO::IObjectOutputStream;
-//using Elastos::IO::IObjectInputStream;
+using Elastos::IO::IObjectOutputStream;
+using Elastos::IO::IObjectInputStream;
 using Elastos::IO::ISerializable;
 using Elastos::Utility::AbstractList;
 
@@ -222,11 +222,11 @@ private:
     ECO_LOCAL static CARAPI_(Int32) NewCapacity(
         /* [in] */ Int32 currentCapacity);
 
-//    ECO_LOCAL CARAPI WriteObject(
-//        /* [in] */ IObjectOutputStream* stream);
+    ECO_LOCAL CARAPI WriteObject(
+        /* [in] */ IObjectOutputStream* stream);
 
-//    ECO_LOCAL CARAPI ReadObject(
-//        /* [in] */ IObjectInputStream* stream);
+    ECO_LOCAL CARAPI ReadObject(
+        /* [in] */ IObjectInputStream* stream);
 
 private:
     /**

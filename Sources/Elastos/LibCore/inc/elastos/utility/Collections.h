@@ -24,10 +24,10 @@
 #include "MapEntry.h"
 #include "AbstractQueue.h"
 
-//using Elastos::IO::IObjectOutputStream;
-//using Elastos::IO::IObjectInputStream;
+using Elastos::IO::IObjectOutputStream;
+using Elastos::IO::IObjectInputStream;
 using Elastos::Core::IComparator;
-//using Elastos::Utility::IRandom;
+using Elastos::Utility::IRandom;
 
 namespace Elastos {
 namespace Utility {
@@ -125,8 +125,8 @@ public:
             /* [out] */ Int32* hashCode);
 
     private:
-//        CARAPI WriteObject(
-//            /* [in] */ IObjectOutputStream* stream);
+        CARAPI WriteObject(
+            /* [in] */ IObjectOutputStream* stream);
 
     public:
         Object* mLock;
@@ -273,8 +273,8 @@ public:
         CARAPI_(String) GetClassName() { return String("Collections::SynchronizedList"); }
 
     private:
-//        CARAPI WriteObject(
-//            /* [in] */ IObjectOutputStream* stream);
+        CARAPI WriteObject(
+            /* [in] */ IObjectOutputStream* stream);
 
         CARAPI_(AutoPtr<IInterface>) ReadResolve();
 
@@ -394,8 +394,8 @@ public:
         CARAPI_(String) GetClassName() { return String("Collections::SynchronizedSet"); }
 
     private:
-//        CARAPI WriteObject(
-//            /* [in] */ IObjectOutputStream* stream);
+        CARAPI WriteObject(
+            /* [in] */ IObjectOutputStream* stream);
     };
 
     class _SynchronizedMap
@@ -477,8 +477,8 @@ public:
         CARAPI_(String) GetClassName() { return String("Collections::SynchronizedMap"); }
 
     private:
-//        CARAPI WriteObject(
-//            /* [in] */ IObjectOutputStream* stream);
+        CARAPI WriteObject(
+            /* [in] */ IObjectOutputStream* stream);
 
     public:
         Object* mLock;
@@ -581,8 +581,8 @@ public:
         CARAPI_(String) GetClassName() { return String("Collections::SynchronizedSortedMap"); }
 
     private:
-//        CARAPI WriteObject(
-//            /* [in] */ IObjectOutputStream* stream);
+        CARAPI WriteObject(
+            /* [in] */ IObjectOutputStream* stream);
         AutoPtr<ISortedMap> mSm;
     };
 
@@ -694,8 +694,8 @@ public:
         CARAPI_(String) GetClassName() { return String("Collections::SynchronizedSortedSet"); }
 
     private:
-//        CARAPI WriteObject(
-//            /* [in] */ IObjectOutputStream* stream);
+        CARAPI WriteObject(
+            /* [in] */ IObjectOutputStream* stream);
         AutoPtr<ISortedSet> mSs;
     };
 
@@ -2381,8 +2381,8 @@ public:
     protected:
         CARAPI_(String) GetClassName() { return String("Collections::SetFromMap"); }
     private:
-//        CARAPI ReadObject(
-//            /* [in] */ IObjectInputStream* stream);
+        CARAPI ReadObject(
+            /* [in] */ IObjectInputStream* stream);
         AutoPtr<IMap> mM;
         AutoPtr<ISet> mBackingSet;
     };
@@ -3359,9 +3359,9 @@ public:
     static CARAPI Shuffle(
         /* [in] */ IList* list);
 
-//    static CARAPI Shuffle(
-//        /* [in] */ IList* list,
-//        /* [in] */ IRandom* random);
+    static CARAPI Shuffle(
+        /* [in] */ IList* list,
+        /* [in] */ IRandom* random);
 
     static CARAPI Singleton(
         /* [in] */ IInterface* object,

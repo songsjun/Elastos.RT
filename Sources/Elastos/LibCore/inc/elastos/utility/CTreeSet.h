@@ -20,9 +20,9 @@
 #include "_Elastos_Utility_CTreeSet.h"
 #include "AbstractSet.h"
 
-//using Elastos::IO::IObjectInputStream;
-//using Elastos::IO::IObjectOutputStream;
-//using Elastos::IO::IObjectStreamField;
+using Elastos::IO::IObjectInputStream;
+using Elastos::IO::IObjectOutputStream;
+using Elastos::IO::IObjectStreamField;
 using Elastos::Core::IComparator;
 using Elastos::Core::ICloneable;
 using Elastos::IO::ISerializable;
@@ -199,11 +199,11 @@ protected:
     CARAPI_(String) GetClassName() { return String("CTreeSet"); }
 
 private:
-//    CARAPI_(void) WriteObject(
-//        /* [in] */ IObjectOutputStream* stream);
+    CARAPI_(void) WriteObject(
+        /* [in] */ IObjectOutputStream* stream);
 
-//    CARAPI_(void) ReadObject(
-//        /* [in] */ IObjectInputStream* stream);
+    CARAPI_(void) ReadObject(
+        /* [in] */ IObjectInputStream* stream);
 
 private:
     /** Keys are this set's elements. Values are always Boolean.TRUE */

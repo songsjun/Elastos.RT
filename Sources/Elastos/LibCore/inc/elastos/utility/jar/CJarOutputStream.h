@@ -18,7 +18,7 @@
 #define __ELASTOS_UTILITY_JAR_ELASTOS_UTILITY_CJAROUTPUTSTREAM_H__
 
 #include "_Elastos_Utility_Jar_CJarOutputStream.h"
-#include "ZipOutputStream.h"
+#include "zip/ZipOutputStream.h"
 
 using Elastos::Utility::Zip::IZipEntry;
 using Elastos::Utility::Zip::ZipOutputStream;

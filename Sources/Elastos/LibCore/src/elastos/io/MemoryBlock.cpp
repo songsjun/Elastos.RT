@@ -15,7 +15,7 @@
 //=========================================================================
 
 #include "MemoryBlock.h"
-#include "Memory.h"
+// #include "Memory.h"
 #include "CByteOrderHelper.h"
 #include "OsConstants.h"
 #include "CLibcore.h"
@@ -26,7 +26,7 @@
 using Elastos::Droid::System::OsConstants;
 using Libcore::IO::CLibcore;
 using Libcore::IO::IOs;
-using Libcore::IO::Memory;
+// using Libcore::IO::Memory;
 using Elastos::IO::IByteOrderHelper;
 using Elastos::IO::CByteOrderHelper;
 using Elastos::IO::Channels::FileChannelMapMode_PRIVATE;
@@ -98,7 +98,9 @@ void MemoryBlock::PokeByte(
     /* [in] */ Int32 offset,
     /* [in] */ Byte value)
 {
+    #if 0
     Memory::PokeByte(mAddress + offset, value);
+    #endif
 }
 
 void MemoryBlock::PokeByteArray(
@@ -107,7 +109,9 @@ void MemoryBlock::PokeByteArray(
     /* [in] */ Int32 srcOffset,
     /* [in] */ Int32 byteCount)
 {
+    #if 0
     Memory::PokeByteArray(mAddress + offset, src, srcOffset, byteCount);
+    #endif
 }
 
 void MemoryBlock::PokeCharArray(
@@ -117,7 +121,9 @@ void MemoryBlock::PokeCharArray(
     /* [in] */ Int32 charCount,
     /* [in] */ Boolean swap)
 {
+    #if 0
     Memory::PokeCharArray(mAddress + offset, src, srcOffset, charCount, swap);
+    #endif
 }
 
 void MemoryBlock::PokeDoubleArray(
@@ -127,7 +133,9 @@ void MemoryBlock::PokeDoubleArray(
     /* [in] */ Int32 doubleCount,
     /* [in] */ Boolean swap)
 {
+    #if 0
     Memory::PokeDoubleArray(mAddress + offset, src, srcOffset, doubleCount, swap);
+    #endif
 }
 
 void MemoryBlock::PokeFloatArray(
@@ -137,7 +145,9 @@ void MemoryBlock::PokeFloatArray(
     /* [in] */ Int32 floatCount,
     /* [in] */ Boolean swap)
 {
+    #if 0
     Memory::PokeFloatArray(mAddress + offset, src, srcOffset, floatCount, swap);
+    #endif
 }
 
 void MemoryBlock::PokeInt32Array(
@@ -147,7 +157,9 @@ void MemoryBlock::PokeInt32Array(
     /* [in] */ Int32 int32Count,
     /* [in] */ Boolean swap)
 {
+    #if 0
     Memory::PokeInt32Array(mAddress + offset, src, srcOffset, int32Count, swap);
+    #endif
 }
 
 void MemoryBlock::PokeInt64Array(
@@ -157,7 +169,9 @@ void MemoryBlock::PokeInt64Array(
     /* [in] */ Int32 int64Count,
     /* [in] */ Boolean swap)
 {
+    #if 0
     Memory::PokeInt64Array(mAddress + offset, src, srcOffset, int64Count, swap);
+    #endif
 }
 
 void MemoryBlock::PokeInt16Array(
@@ -167,13 +181,17 @@ void MemoryBlock::PokeInt16Array(
     /* [in] */ Int32 int16Count,
     /* [in] */ Boolean swap)
 {
+    #if 0
     Memory::PokeInt16Array(mAddress + offset, src, srcOffset, int16Count, swap);
+    #endif
 }
 
 Byte MemoryBlock::PeekByte(
     /* [in] */ Int32 offset)
 {
+    #if 0
     return Memory::PeekByte(mAddress + offset);
+    #endif
 }
 
 void MemoryBlock::PeekByteArray(
@@ -182,7 +200,9 @@ void MemoryBlock::PeekByteArray(
     /* [in] */ Int32 dstOffset,
     /* [in] */ Int32 byteCount)
 {
+    #if 0
     Memory::PeekByteArray(mAddress + offset, dst, dstOffset, byteCount);
+    #endif
 }
 
 void MemoryBlock::PeekCharArray(
@@ -192,7 +212,9 @@ void MemoryBlock::PeekCharArray(
     /* [in] */ Int32 charCount,
     /* [in] */ Boolean swap)
 {
+    #if 0
     Memory::PeekCharArray(mAddress + offset, dst, dstOffset, charCount, swap);
+    #endif
 }
 
 void MemoryBlock::PeekDoubleArray(
@@ -202,7 +224,9 @@ void MemoryBlock::PeekDoubleArray(
     /* [in] */ Int32 doubleCount,
     /* [in] */ Boolean swap)
 {
+    #if 0
     Memory::PeekDoubleArray(mAddress + offset, dst, dstOffset, doubleCount, swap);
+    #endif
 }
 
 void MemoryBlock::PeekFloatArray(
@@ -212,7 +236,9 @@ void MemoryBlock::PeekFloatArray(
     /* [in] */ Int32 floatCount,
     /* [in] */ Boolean swap)
 {
+    #if 0
     Memory::PeekFloatArray(mAddress + offset, dst, dstOffset, floatCount, swap);
+    #endif
 }
 
 void MemoryBlock::PeekInt32Array(
@@ -222,7 +248,9 @@ void MemoryBlock::PeekInt32Array(
     /* [in] */ Int32 int32Count,
     /* [in] */ Boolean swap)
 {
+    #if 0
     Memory::PeekInt32Array(mAddress + offset, dst, dstOffset, int32Count, swap);
+    #endif
 }
 
 void MemoryBlock::PeekInt64Array(
@@ -232,7 +260,9 @@ void MemoryBlock::PeekInt64Array(
     /* [in] */ Int32 int64Count,
     /* [in] */ Boolean swap)
 {
+    #if 0
     Memory::PeekInt64Array(mAddress + offset, dst, dstOffset, int64Count, swap);
+    #endif
 }
 
 void MemoryBlock::PeekInt16Array(
@@ -242,7 +272,9 @@ void MemoryBlock::PeekInt16Array(
     /* [in] */ Int32 int16Count,
     /* [in] */ Boolean swap)
 {
+    #if 0
     Memory::PeekInt16Array(mAddress + offset, dst, dstOffset, int16Count, swap);
+    #endif
 }
 
 void MemoryBlock::PokeInt16(
@@ -255,7 +287,9 @@ void MemoryBlock::PokeInt16(
     CByteOrderHelper::AcquireSingletonByFriend((CByteOrderHelper**)&obj);
     AutoPtr<IByteOrderHelper> boh = (IByteOrderHelper*)obj.Get();
     boh->IsNeedsSwap(order , &isflag);
+    #if 0
     Memory::PokeInt16(mAddress + offset, value, isflag);
+    #endif
 }
 
 Int16 MemoryBlock::PeekInt16(
@@ -267,7 +301,10 @@ Int16 MemoryBlock::PeekInt16(
     CByteOrderHelper::AcquireSingletonByFriend((CByteOrderHelper**)&obj);
     AutoPtr<IByteOrderHelper> boh = (IByteOrderHelper*)obj.Get();
     boh->IsNeedsSwap(order , &isflag);
+    #if 0
     return Memory::PeekInt16(mAddress + offset, isflag);
+    #endif
+    return 0;
 }
 
 void MemoryBlock::PokeInt32(
@@ -280,7 +317,9 @@ void MemoryBlock::PokeInt32(
     CByteOrderHelper::AcquireSingletonByFriend((CByteOrderHelper**)&obj);
     AutoPtr<IByteOrderHelper> boh = (IByteOrderHelper*)obj.Get();
     boh->IsNeedsSwap(order , &isflag);
+    #if 0
     Memory::PokeInt32(mAddress + offset, value, isflag);
+    #endif
 }
 
 Int32 MemoryBlock::PeekInt32(
@@ -292,7 +331,10 @@ Int32 MemoryBlock::PeekInt32(
     CByteOrderHelper::AcquireSingletonByFriend((CByteOrderHelper**)&obj);
     AutoPtr<IByteOrderHelper> boh = (IByteOrderHelper*)obj.Get();
     boh->IsNeedsSwap(order , &isflag);
+    #if 0
     return Memory::PeekInt32(mAddress + offset, isflag);
+    #endif
+    return 0;
 }
 
 void MemoryBlock::PokeInt64(
@@ -305,7 +347,9 @@ void MemoryBlock::PokeInt64(
     CByteOrderHelper::AcquireSingletonByFriend((CByteOrderHelper**)&obj);
     AutoPtr<IByteOrderHelper> boh = (IByteOrderHelper*)obj.Get();
     boh->IsNeedsSwap(order , &isflag);
+    #if 0
     Memory::PokeInt64(mAddress + offset, value, isflag);
+    #endif
 }
 
 Int64 MemoryBlock::PeekInt64(
@@ -317,7 +361,10 @@ Int64 MemoryBlock::PeekInt64(
     CByteOrderHelper::AcquireSingletonByFriend((CByteOrderHelper**)&obj);
     AutoPtr<IByteOrderHelper> boh = (IByteOrderHelper*)obj.Get();
     boh->IsNeedsSwap(order , &isflag);
+    #if 0
     return Memory::PeekInt64(mAddress + offset, isflag);
+    #endif
+    return 0;
 }
 
 Int64 MemoryBlock::ToInt64()

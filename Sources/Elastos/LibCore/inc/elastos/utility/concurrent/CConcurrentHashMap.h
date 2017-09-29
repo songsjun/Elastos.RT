@@ -19,7 +19,7 @@
 
 #include "_Elastos_Utility_Concurrent_CConcurrentHashMap.h"
 #include "AbstractMap.h"
-#include "ReentrantLock.h"
+#include "locks/ReentrantLock.h"
 #include "Object.h"
 
 using Elastos::IO::ISerializable;

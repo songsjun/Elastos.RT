@@ -32,9 +32,9 @@ class NativeZipStream
 {
 public:
     NativeZipStream()
-        : mInput(NULL)
+        : mInput(nullptr)
         , mInCap(0)
-        , mDict(NULL)
+        , mDict(nullptr)
     {
         // Let zlib use its default allocator.
         mStream.opaque = Z_NULL;

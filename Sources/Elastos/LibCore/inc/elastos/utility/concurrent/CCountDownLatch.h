@@ -18,7 +18,7 @@
 #define __ELASTOS_UTILITY_CONCURRENT_ELASTOS_UTILITY_CCOUNTDOWNLATCH_H__
 
 #include "_Elastos_Utility_Concurrent_CCountDownLatch.h"
-#include "AbstractQueuedSynchronizer.h"
+#include "locks/AbstractQueuedSynchronizer.h"
 #include "Object.h"
 
 using Elastos::Utility::Concurrent::Locks::AbstractQueuedSynchronizer;

@@ -27,11 +27,11 @@
 #include "CHashTable.h"
 #include "CVector.h"
 #include "CHugeEnumSet.h"
-//#include "CLocale.h"
+#include "CLocale.h"
 #include "CMiniEnumSet.h"
-//#include "CRandom.h"
-//#include "CTimer.h"
-//#include "CDate.h"
+#include "CRandom.h"
+#include "CTimer.h"
+#include "CDate.h"
 //#include "CObservable.h"
 
 namespace Elastos {
@@ -49,15 +49,13 @@ CAR_OBJECT_IMPL(CHashSet)
 CAR_OBJECT_IMPL(CHashTable)
 CAR_OBJECT_IMPL(CVector)
 CAR_OBJECT_IMPL(CHugeEnumSet)
-//CAR_OBJECT_IMPL(CLocale)
+CAR_OBJECT_IMPL(CLocale)
 CAR_OBJECT_IMPL(CMiniEnumSet)
 CAR_OBJECT_IMPL(CUnsafeArrayList)
-//CAR_OBJECT_IMPL(CRandom)
-//CAR_OBJECT_IMPL(CTimer)
-//CAR_OBJECT_IMPL(CDate)
+CAR_OBJECT_IMPL(CRandom)
+CAR_OBJECT_IMPL(CTimer)
+CAR_OBJECT_IMPL(CDate)
 //CAR_OBJECT_IMPL(CObservable)
-
-
 
 } // namespace Utility
 } // namespace Elastos

@@ -21,8 +21,8 @@
 #include "AbstractQueue.h"
 
 using Elastos::Core::IComparator;
-// using Elastos::IO::IObjectInputStream;
-// using Elastos::IO::IObjectOutputStream;
+using Elastos::IO::IObjectInputStream;
+using Elastos::IO::IObjectOutputStream;
 using Elastos::IO::ISerializable;
 
 namespace Elastos {
@@ -518,15 +518,15 @@ protected:
 
 private:
     // @SuppressWarnings("unchecked")
-    // CARAPI ReadObject(
-    //      [in]  IObjectInputStream* in);
+    CARAPI ReadObject(
+        /* [in] */ IObjectInputStream* in);
 
     // @SuppressWarnings("unchecked")
     CARAPI_(AutoPtr< ArrayOf<IInterface*> >) NewElementArray(
         /* [in] */ Int32 capacity);
 
-    // CARAPI WriteObject(
-    //      [in]  IObjectOutputStream* out);
+    CARAPI WriteObject(
+        /* [in] */ IObjectOutputStream* out);
 
     // @SuppressWarnings("unchecked")
     CARAPI GetFromPriorityQueue(

@@ -37,7 +37,7 @@ CDeflater::CDeflater()
     , mFinished(FALSE)
     , mCompressLevel(IDeflater::DEFAULT_COMPRESSION)
     , mStrategy(IDeflater::DEFAULT_STRATEGY)
-    , mStreamHandle(NULL)
+    , mStreamHandle(nullptr)
     , mInRead(0)
     , mInLength(0)
 {}

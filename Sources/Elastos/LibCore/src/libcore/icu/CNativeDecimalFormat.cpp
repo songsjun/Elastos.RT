@@ -131,7 +131,7 @@ Vector<AutoPtr<INumberFormatField> > getIDs()
 const Vector<AutoPtr<INumberFormatField> > CNativeDecimalFormat::ICU4C_FIELD_IDS = getIDs();
 
 CNativeDecimalFormat::FieldPositionIterator::FieldPositionIterator()
-    : mData(NULL)
+    : mData(nullptr)
     , mPos(-3)
 {}
 
@@ -927,7 +927,7 @@ static U_ICU_NAMESPACE::DecimalFormatSymbols* makeDecimalFormatSymbols(
     /* [in] */ Char32 perMill,
     /* [in] */ Char32 zeroDigit)
 {
-    U_ICU_NAMESPACE::DecimalFormatSymbols* result = new U_ICU_NAMESPACE::DecimalFormatSymbols;
+    U_ICU_NAMESPACE::DecimalFormatSymbols* result = NULL;// new U_ICU_NAMESPACE::DecimalFormatSymbols;
 
 
     // result->setSymbol(DecimalFormatSymbols::kZeroDigitSymbol, UnicodeString(zeroDigit + 0));

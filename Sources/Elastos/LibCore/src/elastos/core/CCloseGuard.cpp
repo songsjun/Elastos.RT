@@ -52,7 +52,7 @@ ECode CCloseGuard::DefaultReporter::Report (
     /* [in] */ const String& message,
     /* [in] */ IThrowable* allocationSite)
 {
-    //Logger::W(TAG, "%s, %s", message.string(), TO_CSTR(allocationSite));
+    Logger::W(TAG, "%s, %s", message.string(), TO_CSTR(allocationSite));
 
     // AutoPtr<ISystem> system;
     // CSystem::AcquireSingleton((ISystem**)&system);
@@ -81,7 +81,7 @@ ECode CCloseGuard::SetReporter(
     /* [in] */ ICloseGuardReporter* reporter)
 {
     if (reporter == NULL) {
-        //Logger::E(TAG, "SetReporter: reporter == null");
+        Logger::E(TAG, "SetReporter: reporter == null");
         return E_NULL_POINTER_EXCEPTION;
     }
     REPORTER = reporter;
@@ -98,7 +98,7 @@ ECode CCloseGuard::Open(
 {
     // always perform the check for valid API usage...
     if (closer.IsNull()) {
-        //Logger::E(TAG, "Open: closer == null");
+        Logger::E(TAG, "Open: closer == null");
         return E_NULL_POINTER_EXCEPTION;
     }
     // ...but avoid allocating an allocationSite if disabled

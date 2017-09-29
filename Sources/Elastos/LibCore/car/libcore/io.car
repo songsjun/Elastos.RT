@@ -72,9 +72,9 @@ module
             interface IDropBox;
         }
 
-        singleton class CMemory {
-            interface IMemory;
-        }
+        // singleton class CMemory {
+        //     interface IMemory;
+        // }
 
         singleton class CIoUtils {
             interface IIoUtils;

@@ -16,8 +16,8 @@
 
 module
 {
-	//interface Elastos.IO.IInt64Buffer;
-	//interface Elastos.IO.IByteBuffer;
+	interface Elastos.IO.IInt64Buffer;
+	interface Elastos.IO.IByteBuffer;
 
     namespace Elastos {
     namespace Utility {
@@ -283,11 +283,10 @@ module
          * sequence of bits. This method does not alter the {@code LongBuffer}.
          * @hide 1.7
          */
-        /*
         ValueOf(
             [in] IInt64Buffer* int64Arr,
             [out] IBitSet** bs);
-        */
+
         /**
          * Equivalent to {@code BitSet.valueOf(ByteBuffer.wrap(bytes))}.
          * @hide 1.7
@@ -301,11 +300,9 @@ module
          * sequence of bits. This method does not alter the {@code ByteBuffer}.
          * @hide 1.7
          */
-        /*
         ValueOf(
             [in] IByteBuffer* byteArr,
             [out] IBitSet** bs);
-        */
     }
 
     } // namespace Utility

@@ -19,7 +19,7 @@ module
     interface Elastos.IO.IFileFilter;
     interface Elastos.IO.IFilenameFilter;
     interface Elastos.Net.IURI;
-//    interface Elastos.Net.IURL;
+    interface Elastos.Net.IURL;
 
     namespace Elastos {
     namespace IO {
@@ -614,8 +614,8 @@ module
          * correct escape illegal characters.
          */
         // @Deprecated
-//        ToURL(
-//            [out] IURL** uri);
+        ToURL(
+            [out] IURL** uri);
 
         /**
          * Returns the total size in bytes of the partition containing this path.

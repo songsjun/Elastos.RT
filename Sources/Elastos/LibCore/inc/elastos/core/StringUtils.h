@@ -20,7 +20,7 @@
 #include "Elastos.CoreLibrary.h"
 
 using Elastos::Core::ICharSequence;
-//using Elastos::Utility::ILocale;
+using Elastos::Utility::ILocale;
 
 namespace Elastos {
 namespace Core {
@@ -283,10 +283,10 @@ public:
      *             if the format is invalid.
      * @since 1.5
      */
-    //static CARAPI_(String) Format(
-    //    /* [in] */ ILocale* locale,
-    //    /* [in] */ const String& format,
-    //    /* [in] */ ArrayOf<IInterface*>* args);
+    static CARAPI_(String) Format(
+        /* [in] */ ILocale* locale,
+        /* [in] */ const String& format,
+        /* [in] */ ArrayOf<IInterface*>* args);
 
 private:
     ECO_LOCAL StringUtils();

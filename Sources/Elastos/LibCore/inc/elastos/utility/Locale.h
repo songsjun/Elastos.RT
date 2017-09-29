@@ -17,7 +17,7 @@
 #ifndef __ELASTOS_UTILITY_LOCALE_H__
 #define __ELASTOS_UTILITY_LOCALE_H__
 
-//#include "Elastos.CoreLibrary.IO.h"
+#include "Elastos.CoreLibrary.IO.h"
 #include "Elastos.CoreLibrary.Utility.h"
 #include <elastos/core/Object.h>
 #include <elastos/utility/etl/HashMap.h>
@@ -25,8 +25,8 @@
 using Elastos::Core::ICloneable;
 using Elastos::Core::Object;
 using Elastos::IO::ISerializable;
-// using Elastos::IO::IObjectOutputStream;
-// using Elastos::IO::IObjectStreamField;
+using Elastos::IO::IObjectOutputStream;
+using Elastos::IO::IObjectStreamField;
 
 namespace Elastos {
 namespace Utility {
@@ -634,11 +634,11 @@ private:
         /* [in] */ Int32 start,
         /* [in] */ Int32 end);
 
-    // CARAPI WriteObject(
-    //     /* [in] */ IObjectOutputStream* stream);
+    CARAPI WriteObject(
+        /* [in] */ IObjectOutputStream* stream);
 
-    // CARAPI ReadObject(
-    //     /* [in] */ IObjectOutputStream* stream);
+    CARAPI ReadObject(
+        /* [in] */ IObjectOutputStream* stream);
 
     CARAPI ReadExtensions(
         /* [in] */ const String& extensions);
@@ -728,7 +728,7 @@ private:
 private:
     friend class CLocaleHelper;
 
-//    static AutoPtr<ArrayOf<IObjectStreamField*> > sSerialPersistentFields;
+    static AutoPtr<ArrayOf<IObjectStreamField*> > sSerialPersistentFields;
     static String UNDETERMINED_LANGUAGE;
 
     /**

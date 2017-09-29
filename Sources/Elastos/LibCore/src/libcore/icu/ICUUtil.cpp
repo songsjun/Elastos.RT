@@ -32,7 +32,7 @@
 //#include <ustrenum.h>
 
 #include <unicode/ucat.h>
-#include <unicode/ureslocs.h>
+// #include <unicode/ureslocs.h>
 #include <unicode/calendar.h>
 #include <unicode/datefmt.h>
 #include <unicode/dcfmtsym.h>
@@ -749,6 +749,7 @@ String ICUUtil::GetCurrencyCode(
 {
     String nullStr;
     UErrorCode status = U_ZERO_ERROR;
+#if 0    
     ScopedResourceBundle supplData(ures_openDirect(U_ICUDATA_CURR, "supplementalData", &status));
     if (U_FAILURE(status)) {
         return nullStr;
@@ -758,7 +759,7 @@ String ICUUtil::GetCurrencyCode(
     if (U_FAILURE(status)) {
         return nullStr;
     }
-
+    
     ScopedResourceBundle currency(ures_getByKey(currencyMap.get(), locale.string(), NULL, &status));
     if (U_FAILURE(status)) {
         return String(NULL);
@@ -793,6 +794,8 @@ String ICUUtil::GetCurrencyCode(
     }
 
     return UnicodeStringToString(UnicodeString(chars));
+#endif
+    return String(NULL);
 }
 
 String ICUUtil::GetCurrencyDisplayName(

@@ -571,7 +571,7 @@ ECode StringUtils::ReplaceAll(
     VALIDATE_NOT_NULL(result);
     *result = String(NULL);
 
-return NOERROR;
+     return NOERROR;
 
 /*
     AutoPtr<IPatternHelper> helper;
@@ -592,7 +592,7 @@ ECode StringUtils::Matches(
 {
     VALIDATE_NOT_NULL(result);
 
-return NOERROR;
+    return NOERROR;
 
 /*
     AutoPtr<IPatternHelper> helper;

@@ -18,7 +18,7 @@
 #define __ELASTOS_UTILITY_JAR_ELASTOS_UTILITY_CJARINPUTSTREAM_H__
 
 #include "_Elastos_Utility_Jar_CJarInputStream.h"
-#include "ZipInputStream.h"
+#include "zip/ZipInputStream.h"
 #include "JarVerifier.h"
 
 using Elastos::Utility::Zip::ZipInputStream;

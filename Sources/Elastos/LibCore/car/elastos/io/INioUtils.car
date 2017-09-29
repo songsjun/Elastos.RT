@@ -16,7 +16,7 @@
 
 module
 {
-//    interface Elastos.IO.Channels.IFileChannel;
+    interface Elastos.IO.Channels.IFileChannel;
 
     namespace Elastos {
     namespace IO {
@@ -33,18 +33,18 @@ module
         /**
          * Returns the int file descriptor from within the given FileChannel 'fc'.
          */
-//        GetFD(
-//            [in] IFileChannel* fc,
-//            [out] IFileDescriptor** outfd);
+        GetFD(
+            [in] IFileChannel* fc,
+            [out] IFileDescriptor** outfd);
 
         /**
          * Helps bridge between io and nio.
          */
-//        NewFileChannel(
-//            [in] ICloseable* ioObject,
-//            [in] IFileDescriptor* fd,
-//            [in] Int32 mode,
-//            [out] IFileChannel** outchannel);
+        NewFileChannel(
+            [in] ICloseable* ioObject,
+            [in] IFileDescriptor* fd,
+            [in] Int32 mode,
+            [out] IFileChannel** outchannel);
 
         /**
          * Exposes the array backing a non-direct ByteBuffer, even if the ByteBuffer is read-only.

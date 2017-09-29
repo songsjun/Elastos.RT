@@ -15,16 +15,11 @@
 #=========================================================================
 
 DIRS = core
-
-USING_ELASTOS_LIBCORE_IO := $(USING_ELASTOS_LIBCORE_IO)
-ifdef USING_ELASTOS_LIBCORE_IO
-    DIRS += io
-endif
-
+DIRS += io
 DIRS += math
-#DIRS += net
-#DIRS += security
-#DIRS += sql
-#DIRS += text
+DIRS += net
+DIRS += security
+DIRS += sql
+DIRS += text
 DIRS += utility
-#DIRS += droid
+DIRS += droid

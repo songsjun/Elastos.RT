@@ -125,14 +125,12 @@ ECode CCollections::Shuffle(
     return Collections::Shuffle(list);
 }
 
-#if 0
 ECode CCollections::Shuffle(
     /* [in] */ IList* list,
     /* [in] */ IRandom* random)
 {
     return Collections::Shuffle(list, random);
 }
-#endif
 
 ECode CCollections::Singleton(
     /* [in] */ IInterface* object,

@@ -23,9 +23,9 @@
 #include "AbstractCollection.h"
 #include "MapEntry.h"
 
-//using Elastos::IO::IObjectInputStream;
-//using Elastos::IO::IObjectOutputStream;
-//using Elastos::IO::IObjectStreamField;
+using Elastos::IO::IObjectInputStream;
+using Elastos::IO::IObjectOutputStream;
+using Elastos::IO::IObjectStreamField;
 using Elastos::Core::IEnum;
 
 namespace Elastos {
@@ -644,11 +644,11 @@ protected:
 
 private:
     // @SuppressWarnings("unchecked")
-//    CARAPI ReadObject(
-//        /* [in] */ IObjectInputStream* stream);
+    CARAPI ReadObject(
+        /* [in] */ IObjectInputStream* stream);
 
-//    CARAPI WriteObject(
-//        /* [in] */ IObjectOutputStream* stream);
+    CARAPI WriteObject(
+        /* [in] */ IObjectOutputStream* stream);
 
     CARAPI_(Boolean) IsValidKeyType(
         /* [in] */ IInterface* key);

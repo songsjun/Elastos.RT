@@ -16,7 +16,7 @@
 
 module
 {
-    merge("icu/Exceptions.car");
+    //merge("icu/Exceptions.car");
     merge("icu/ICollationKeyICU.car");
     merge("icu/ILocaleData.car");
     merge("icu/IICUUtil.car");

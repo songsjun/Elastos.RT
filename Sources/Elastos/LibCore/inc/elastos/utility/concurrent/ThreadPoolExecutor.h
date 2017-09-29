@@ -18,7 +18,7 @@
 #define __ELASTOS_UTILITY_CONCURRENT_ELASTOS_UTILITY_THREADPOOLEXECUTOR_H__
 
 #include "AbstractExecutorService.h"
-#include "AbstractQueuedSynchronizer.h"
+#include "locks/AbstractQueuedSynchronizer.h"
 #include <elastos/utility/etl/HashSet.h>
 //#include <Condition.h>
 

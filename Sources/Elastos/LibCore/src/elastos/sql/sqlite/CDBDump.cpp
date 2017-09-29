@@ -64,6 +64,7 @@ ECode CDBDump::Newrow(
         AutoPtr<ArrayOf<String> > qargs = ArrayOf<String>::Alloc(1);
         (*qargs)[0] = (*args)[0];
         Boolean isflag = FALSE;
+        #if 0
         s2.mDb->Is3(&isflag);
         ECode ec = NOERROR;
         if (isflag) {
@@ -98,6 +99,7 @@ ECode CDBDump::Newrow(
             iflush->Flush();
             *value = TRUE;
         }
+        #endif
     }
     *value = FALSE;
     return NOERROR;
@@ -110,6 +112,7 @@ ECode CDBDump::constructor(
     mShell = (CShell *)ms;
     mShell->mPw->Print(String("BEGIN TRANSACTION;"));
     AutoPtr<IFlushable> iflush = (IFlushable*)mShell->mErr->Probe(EIID_IFlushable);
+    #if 0
     if (tables == NULL || tables->GetLength() == 0) {
         ECode  ec = mShell->mDb->Exec(String("SELECT name, type, sql FROM sqlite_master ") +
                         String("WHERE type!='meta' AND sql NOT NULL ") +
@@ -134,6 +137,7 @@ ECode CDBDump::constructor(
         }
         }
     }
+    #endif
     mShell->mPw->Print(String("COMMIT;"));
     return NOERROR;
 }

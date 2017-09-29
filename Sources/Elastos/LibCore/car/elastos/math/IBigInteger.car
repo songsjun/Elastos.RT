@@ -16,6 +16,8 @@
 
 module
 {
+    interface Elastos.Utility.IRandom;
+
     namespace Elastos {
     namespace Math {
 
@@ -550,10 +552,10 @@ module
          * :-|:------------|
          * IllegalArgumentException | if {bitLength < 2}.
          */
-//        ProbablePrime(
-//            [in] Int32 bitLength,
-//            [in] IRandom* unused,
-//            [out] IBigInteger** result);
+        ProbablePrime(
+            [in] Int32 bitLength,
+            [in] IRandom* unused,
+            [out] IBigInteger** result);
 
         GetMINUSOne(
             [out] IBigInteger** result);

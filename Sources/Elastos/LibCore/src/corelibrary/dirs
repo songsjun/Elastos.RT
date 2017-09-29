@@ -14,7 +14,7 @@
 # limitations under the License.
 #=========================================================================
 
-#DIRS += ../libcore
+DIRS += ../libcore
 DIRS += ../elastos
-#DIRS += ../elastosx
-#DIRS += ../org
+DIRS += ../elastosx
+DIRS += ../org

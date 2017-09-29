@@ -19,7 +19,7 @@
 #include "ElaMath.h"
 #include "CDataInputStream.h"
 #include "CBufferedInputStream.h"
-#include "CRandomAccessFile.h"
+// #include "CRandomAccessFile.h"
 #include "CFile.h"
 #include "CZipEntry.h"
 #include "StringBuilder.h"
@@ -44,7 +44,7 @@ using Elastos::IO::IDataInput;
 using Elastos::IO::ByteOrder_LITTLE_ENDIAN;
 using Elastos::IO::IBufferedInputStream;
 using Elastos::IO::CBufferedInputStream;
-using Elastos::IO::CRandomAccessFile;
+// using Elastos::IO::CRandomAccessFile;
 using Elastos::IO::CFile;
 using Elastos::IO::EIID_IDataInput;
 using Elastos::IO::EIID_IInputStream;
@@ -331,8 +331,10 @@ ECode ZipFile::constructor(
     else {
         mFileToDeleteOnClose = NULL;
     }
-
+    
+    #if 0
     FAIL_RETURN(CRandomAccessFile::New(file, String("r"), (IRandomAccessFile**)&mRaf));
+    #endif
 
     // Make sure to close the RandomAccessFile if reading the central directory fails.
     Boolean mustCloseFile = TRUE;
@@ -461,9 +463,11 @@ ECode ZipFile::GetInputStream(
 
     // Create an InputStream at the right part of the file.
     AutoPtr<IRandomAccessFile> raf = mRaf;
+    #if 0
     CRandomAccessFile* craf = (CRandomAccessFile*)raf.Get();
 
     AutoLock lock(craf);
+    #endif
     // We don't know the entry data's start position. All we have is the
     // position of the entry's local header.
     // http://www.pkware.com/documents/casestudies/APPNOTE.TXT

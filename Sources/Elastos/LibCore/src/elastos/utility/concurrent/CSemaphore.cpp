@@ -157,14 +157,14 @@ CAR_INTERFACE_IMPL(CSemaphore, Object, ISemaphore, ISerializable)
 
 CAR_OBJECT_IMPL(CSemaphore)
 
-CSemaphore::constructor(
+ECode CSemaphore::constructor(
     /* [in] */ Int32 permits)
 {
     mSync = new NonfairSync(permits);
     return NOERROR;
 }
 
-CSemaphore::constructor(
+ECode CSemaphore::constructor(
     /* [in] */ Int32 permits,
     /* [in] */ Boolean fair)
 {

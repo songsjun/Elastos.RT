@@ -40,7 +40,7 @@ CInflater::CInflater()
     , mInRead(0)
     , mFinished(FALSE)
     , mNeedsDictionary(FALSE)
-    , mStreamHandle(NULL)
+    , mStreamHandle(nullptr)
 {
     AutoPtr<ICloseGuardHelper> helper;
     CCloseGuardHelper::AcquireSingleton((ICloseGuardHelper**)&helper);
@@ -83,6 +83,7 @@ ECode CInflater::CreateStream(
      * here without worrying about memory consumption.
      */
     Int32 err = inflateInit2(&stream->mStream, noHeader ? -DEF_WBITS : DEF_WBITS);
+
     if (err != Z_OK) {
 //        throwExceptionForZlibError(env, "java/lang/IllegalArgumentException", err);
         mStreamHandle = NULL;

@@ -18,7 +18,7 @@
 #include "IoUtils.h"
 #include "CFileDescriptor.h"
 #include "CFile.h"
-#include "CRandomAccessFile.h"
+// #include "CRandomAccessFile.h"
 #include "CLibcore.h"
 #include "IoBridge.h"
 #include "StringBuilder.h"
@@ -46,7 +46,7 @@ IoUtils::FileReader::FileReader()
 {
 }
 
-IoUtils::FileReader::Init(
+ECode IoUtils::FileReader::Init(
     /* [in] */ const String& absolutePath)
 {
     // We use IoBridge.open because callers might differentiate

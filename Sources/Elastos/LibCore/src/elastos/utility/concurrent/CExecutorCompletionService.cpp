@@ -16,7 +16,7 @@
 
 #include "CExecutorCompletionService.h"
 #include "CLinkedBlockingQueue.h"
-#include "CFutureTask.h"
+// #include "CFutureTask.h"
 #include "AbstractExecutorService.h"
 
 namespace Elastos {
@@ -59,7 +59,7 @@ AutoPtr<IRunnableFuture> CExecutorCompletionService::NewTaskFor(
 {
     if (mAes == NULL) {
         AutoPtr<IRunnableFuture> f;
-        CFutureTask::New(task, (IRunnableFuture**)&f);
+        // CFutureTask::New(task, (IRunnableFuture**)&f);
         return f;
     }
     else {
@@ -75,7 +75,7 @@ AutoPtr<IRunnableFuture> CExecutorCompletionService::NewTaskFor(
 {
     if (mAes == NULL) {
         AutoPtr<IRunnableFuture> f;
-        CFutureTask::New(task, result, (IRunnableFuture**)&f);
+        // CFutureTask::New(task, result, (IRunnableFuture**)&f);
         return f;
     }
     else {

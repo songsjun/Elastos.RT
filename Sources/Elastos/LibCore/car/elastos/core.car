@@ -46,11 +46,11 @@ module
     merge("core/IBlockGuard.car");
     merge("core/ICloseGuard.car");
     merge("core/IEnum.car");
-    //merge("core/ISystem.car");
+    merge("core/ISystem.car");
     merge("core/IThreadLocal.car");
 
-    //merge("core/reflect/IInvocationHandler.car");
-    //merge("core/reflect/IProxyFactory.car");
+    merge("core/reflect/IInvocationHandler.car");
+    merge("core/reflect/IProxyFactory.car");
 
     merge("io/ISerializable.car");
 
@@ -392,7 +392,6 @@ module
         interface IArrayOf;
     }
 
-/*
     class CThrowable {
         constructor();
 
@@ -428,14 +427,14 @@ module
          interface ISystem;
     }
 
-    namespace Reflect {
+    // namespace Reflect {
 
-    singleton class CProxyFactory {
-        interface IProxyFactory;
-    }
+    // singleton class CProxyFactory {
+    //     interface IProxyFactory;
+    // }
 
-    } // namespace Reflect
-*/
+    // } // namespace Reflect
+
     } // namespace Core
     } // namepsace Elastos
 }

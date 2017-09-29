@@ -14,13 +14,13 @@
 // limitations under the License.
 //=========================================================================
 
-//#include "Elastos.CoreLibrary.IO.h"
+#include "Elastos.CoreLibrary.IO.h"
 #include "CHashSet.h"
 #include "CHashMap.h"
 
 using Elastos::Core::EIID_ICloneable;
-// using Elastos::IO::IInputStream;
-// using Elastos::IO::IOutputStream;
+using Elastos::IO::IInputStream;
+using Elastos::IO::IOutputStream;
 using Elastos::IO::EIID_ISerializable;
 
 namespace Elastos {
@@ -158,7 +158,6 @@ ECode HashSet::GetSize(
     return mBackingMap->GetSize(size);
 }
 
-#if 0
 ECode HashSet::WriteObject(
     /* [in] */ IObjectOutputStream* stream)
 {
@@ -195,7 +194,6 @@ ECode HashSet::ReadObject(
     }
     return E_NOT_IMPLEMENTED;
 }
-#endif
 
 AutoPtr<IMap> HashSet::CreateBackingMap(
     /* [in] */ Int32 capacity,

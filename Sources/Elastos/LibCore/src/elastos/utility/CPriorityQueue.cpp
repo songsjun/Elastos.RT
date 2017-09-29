@@ -14,15 +14,15 @@
 // limitations under the License.
 //=========================================================================
 
-//#include "Elastos.CoreLibrary.IO.h"
+#include "Elastos.CoreLibrary.IO.h"
 #include "CPriorityQueue.h"
 #include "Arrays.h"
 #include "ElaMath.h"
 
 using Elastos::Core::IComparable;
 using Elastos::IO::EIID_ISerializable;
-// using Elastos::IO::IOutputStream;
-// using Elastos::IO::IInputStream;
+using Elastos::IO::IOutputStream;
+using Elastos::IO::IInputStream;
 
 namespace Elastos {
 namespace Utility {
@@ -353,7 +353,6 @@ AutoPtr< ArrayOf<IInterface*> > CPriorityQueue::NewElementArray(
     return outres;
 }
 
-#if 0
 ECode CPriorityQueue::ReadObject(
     /* [in] */ IObjectInputStream* in)
 {
@@ -379,7 +378,6 @@ ECode CPriorityQueue::WriteObject(
     }
     return NOERROR;
 }
-#endif
 
 ECode CPriorityQueue::GetFromPriorityQueue(
     /* [in] */ IPriorityQueue* c)

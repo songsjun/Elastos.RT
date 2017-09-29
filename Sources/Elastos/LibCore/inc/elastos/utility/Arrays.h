@@ -31,8 +31,8 @@ using Elastos::Core::IComparator;
 using Elastos::Core::IComparable;
 using Elastos::Core::StringBuilder;
 using Elastos::Core::IArrayOf;
-using Elastos::IO::ISerializable;
-//using Elastos::Utility::Logging::Logger;
+//using Elastos::IO::ISerializable;
+using Elastos::Utility::Logging::Logger;
 
 namespace Elastos {
 namespace Utility {
@@ -897,7 +897,7 @@ ECode Arrays::BinarySearch(
 
     ECode ec = CheckBinarySearchBounds(startIndex, endIndex, array->GetLength());
     if (FAILED(ec)) {
-        printf("Arrays", "BinarySearch: error %08x, startIndex: %d, endIndex: %d, array length: %d",
+        Logger::E("Arrays", "BinarySearch: error %08x, startIndex: %d, endIndex: %d, array length: %d",
             ec, startIndex, endIndex, array->GetLength());
         return ec;
     }
@@ -910,7 +910,7 @@ ECode Arrays::BinarySearch(
         mid = (UInt32(lo + hi)) >> 1;
         comp = IComparable::Probe((*array)[mid]);
         if (comp == NULL) {
-            printf("Arrays", "BinarySearch: object at %d does not implement IComparable.", mid);
+            Logger::E("Arrays", "BinarySearch: object at %d does not implement IComparable.", mid);
         }
         assert(comp != NULL);
         comp->CompareTo(TO_IINTERFACE(value), &midValCmp);
