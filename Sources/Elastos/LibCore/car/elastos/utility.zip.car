@@ -911,12 +911,12 @@ module
         interface ICloseable;
     }
 
-    class CStrictJarFile {
-        constructor(
-            [in] String filename);
+    //class CStrictJarFile {
+    //    constructor(
+    //        [in] String filename);
 
-        interface IStrictJarFile;
-    }
+    //    interface IStrictJarFile;
+    //}
 
     [deprecated]
     class CJarInputStream {

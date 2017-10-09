@@ -48,4 +48,4 @@ SOURCES += CJarOutputStream.cpp
 SOURCES += CPack200.cpp
 SOURCES += CJarEntry.cpp
 SOURCES += CJarFile.cpp
-SOURCES += CStrictJarFile.cpp
+#SOURCES += CStrictJarFile.cpp

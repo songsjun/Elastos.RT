@@ -15,8 +15,8 @@
 //=========================================================================
 
 #include "FutureTask.h"
-#include <cutils/atomic.h>
-#include <cutils/atomic-inline.h>
+// #include <cutils/atomic.h>
+// #include <cutils/atomic-inline.h>
 #include "LockSupport.h"
 #include "Executors.h"
 #include "CInteger32.h"
@@ -123,7 +123,12 @@ ECode FutureTask::IsDone(
 static Boolean CompareAndSwapInt32(volatile int32_t* address, Int32 expect, Int32 update)
 {
     // Note: android_atomic_release_cas() returns 0 on success, not failure.
-    int ret = android_atomic_release_cas(expect, update, address);
+    int ret = 0;
+#ifdef _android
+    ret = android_atomic_release_cas(expect, update, address);
+#else
+    ret = atomic_cmpxchg(expect, update, address);
+#endif
 
     return (ret == 0);
 }
@@ -131,8 +136,12 @@ static Boolean CompareAndSwapInt32(volatile int32_t* address, Int32 expect, Int3
 static Boolean CompareAndSwapObject(volatile int32_t* address, IInterface* expect, IInterface* update)
 {
     // Note: android_atomic_cmpxchg() returns 0 on success, not failure.
-    int ret = android_atomic_release_cas((int32_t)expect,
-            (int32_t)update, address);
+    int ret = 0;
+#ifdef _android
+    ret = android_atomic_release_cas((int32_t)expect, (int32_t)update, address);
+#else
+    ret = atomic_cmpxchg((int32_t)expect, (int32_t)update, address);
+#endif
     if (ret == 0) {
         REFCOUNT_ADD(update)
         REFCOUNT_RELEASE(expect)
