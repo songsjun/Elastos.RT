@@ -181,6 +181,6 @@ ifeq "$(XDK_TARGET_PLATFORM)" "android"
 	LIBRARIES += -llog -lz -lm -lcrypto
 else
 ifeq "$(XDK_TARGET_PLATFORM)" "linux"
-LIBRARIES += -lm -lc -ldl -lpthread -lstdc++ -lz -lrt -licuuc -lssl -lcrypto
+LIBRARIES += -lm -lc -ldl -lpthread -lstdc++ -lz -lrt -licuuc -lssl -lcrypto -lsqlite3
 endif
 endif

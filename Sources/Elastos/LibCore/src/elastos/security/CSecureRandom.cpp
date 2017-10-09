@@ -223,7 +223,8 @@ ECode CSecureRandom::SetSeed(
         return NOERROR;
     }
     AutoPtr<ArrayOf<Byte> > byteSeed = ArrayOf<Byte>::Alloc(ISizeOf::INT64);
-    Memory::PokeInt64(byteSeed, 0, seed, Elastos::IO::ByteOrder_BIG_ENDIAN);
+    assert(0 && "TODO");
+    // Memory::PokeInt64(byteSeed, 0, seed, Elastos::IO::ByteOrder_BIG_ENDIAN);
     SetSeed(byteSeed);
     return NOERROR;
 }

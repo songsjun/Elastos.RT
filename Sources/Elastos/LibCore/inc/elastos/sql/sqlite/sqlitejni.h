@@ -32,7 +32,7 @@ using Elastos::Sql::SQLite::IDatabase;
 
 
 #define HAVE_SQLITE2 0
-#define HAVE_SQLITE3 0
+#define HAVE_SQLITE3 1
 #define HAVE_SQLITE_FUNCTION_TYPE 0
 #define HAVE_SQLITE_OPEN_AUX_FILE 0
 #define HAVE_SQLITE_SET_AUTHORIZER 0
