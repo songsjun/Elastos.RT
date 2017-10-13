@@ -84,7 +84,7 @@ protected:
      *
      * @return {@code AlgorithmParameters} for this generator's algorithm.
      */
-    virtual AutoPtr<IAlgorithmParameters> EngineGenerateParameters();
+    virtual AutoPtr<IAlgorithmParameters> EngineGenerateParameters() = 0;
 
 private:
     friend class CAlgorithmParameterGenerator;

@@ -69,7 +69,7 @@ ECode __PrintlnImpl(Int32 bufID, Int32 priority, const char * tag, const char *m
         return E_INVALID_ARGUMENT;
     }
 
-#ifdef _openkode
+#if defined(_openkode) || defined(_linux)
     char ch = '0';
 
     switch (priority) {
@@ -93,11 +93,10 @@ ECode __PrintlnImpl(Int32 bufID, Int32 priority, const char * tag, const char *m
         break;
     }
 
-    printf("%c/%s: %s", ch, (const char *)tag, msgBuf);
+    printf("%c/%s: %s\n", ch, (const char *)tag, msgBuf);
     return NOERROR;
 #else // _openkode
-    return ErrToECode(
-        __android_log_buf_write(bufID, priority, (const char *)tag, msgBuf));
+    return ErrToECode(__android_log_buf_write(bufID, priority, (const char *)tag, msgBuf));
 #endif // _openkode
 }
 

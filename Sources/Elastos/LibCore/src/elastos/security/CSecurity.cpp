@@ -100,7 +100,7 @@ CSecurity::StaticInitializer::StaticInitializer()
     // - load statically registered providers
     // - if no provider description file found then load default providers
 
-    Logger::E("CSecurity", "TODO leliang file:%s", __FILE__);
+    // Logger::E("CSecurity", "TODO leliang file:%s", __FILE__);
     Boolean loaded = FALSE;
     // try {
     // TODO:

@@ -67,7 +67,12 @@ ECode DefaultTimeZoneGetter::GetId(
 
     char buf[PROP_VALUE_MAX + 1];
 
-    int len = property_get("persist.sys.timezone", buf, "");
+    int len = 0;
+#ifdef _android
+    len = property_get("persist.sys.timezone", buf, "");
+#else
+    #warning "TODO: Need to implement it, in DefaultTimeZoneGetter::GetId."
+#endif
     if (len >= 0) {
         *id = String(buf);
     }

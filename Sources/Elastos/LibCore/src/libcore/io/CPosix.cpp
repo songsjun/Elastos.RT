@@ -503,7 +503,12 @@ ECode CPosix::Elastos_getaddrinfo(
 
     addrinfo* addressList = NULL;
     errno = 0;
-    Int32 rc = android_getaddrinfofornet(node, NULL, &hints, netId, 0, &addressList);
+    Int32 rc = -1;
+#ifdef _android
+    rc = android_getaddrinfofornet(node, NULL, &hints, netId, 0, &addressList);
+#else
+    assert(0 && "TODO: Need to implement it.");
+#endif
     UniquePtr<addrinfo, addrinfo_deleter> addressListDeleter(addressList);
     if (rc != 0) {
         // throwGaiException(env, "android_getaddrinfo", rc);

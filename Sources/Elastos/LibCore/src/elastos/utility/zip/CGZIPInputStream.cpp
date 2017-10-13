@@ -80,8 +80,7 @@ ECode CGZIPInputStream::constructor(
     AutoPtr<ArrayOf<Byte> > header;
     FAIL_GOTO(ReadHeader(is, (ArrayOf<Byte>**)&header), _EXIT_)
 
-    assert(0 && "TODO: Doesn't compile Memory.cpp");
-    // magic = Memory::PeekInt16(header, 0, ByteOrder_LITTLE_ENDIAN);
+    magic = Memory::PeekInt16(header, 0, ByteOrder_LITTLE_ENDIAN);
     if (magic != (Int16) IGZIPInputStream::GZIP_MAGIC) {
         ALOGE("IOException: CGZIPInputStream unknown format (magic number %08x", magic);
         // throw new IOException(String.format("unknown format (magic number %x)", magic));
@@ -192,9 +191,7 @@ ECode CGZIPInputStream::MaybeReadNextMember(
         return NOERROR;
     }
 
-    Int16 magic = 0;
-    assert(0 && "TODO: Doesn't compile Memory.cpp");
-    // magic = Memory::PeekInt16(buffer, 0, ByteOrder_LITTLE_ENDIAN);
+    Int16 magic = Memory::PeekInt16(buffer, 0, ByteOrder_LITTLE_ENDIAN);
     if (magic != (Int16) IGZIPInputStream::GZIP_MAGIC) {
         // Don't throw here because we've already read one valid member
         // from this stream.
@@ -246,9 +243,7 @@ ECode CGZIPInputStream::ParseGzipHeader(
             IChecksum::Probe(crc)->Update(header, 0, 2);
         }
 
-        Int32 length = 0;
-        assert(0 && "TODO: Doesn't compile Memory.cpp");
-        // length = Memory::PeekInt16(scratch, 0, ByteOrder_LITTLE_ENDIAN) & 0xffff;
+        Int32 length = Memory::PeekInt16(scratch, 0, ByteOrder_LITTLE_ENDIAN) & 0xffff;
         Int32 result, max;
         while (length > 0) {
             max = length > scratch->GetLength() ? scratch->GetLength() : length;
@@ -276,9 +271,7 @@ ECode CGZIPInputStream::ParseGzipHeader(
         AutoPtr<IStreams> streams;
         CStreams::AcquireSingleton((IStreams**)&streams);
         FAIL_RETURN(streams->ReadFully(in, header, 0, 2))
-        Int16 crc16 = 0;
-        assert(0 && "TODO: Doesn't compile Memory.cpp");
-        // crc16 = Memory::PeekInt16(scratch, 0, ByteOrder_LITTLE_ENDIAN);
+        Int16 crc16 = Memory::PeekInt16(scratch, 0, ByteOrder_LITTLE_ENDIAN);
         Int64 val;
         IChecksum::Probe(crc)->GetValue(&val);
         if ((Int16)val != crc16) {
@@ -307,9 +300,7 @@ ECode CGZIPInputStream::VerifyCrc()
     Int64 checksum;
     IChecksum::Probe(mCrc)->GetValue(&checksum);
 
-    Int32 temp = 0;
-    assert(0 && "TODO: Doesn't compile Memory.cpp");
-    // temp = Memory::PeekInt32(b, 0, ByteOrder_LITTLE_ENDIAN);
+    Int32 temp = Memory::PeekInt32(b, 0, ByteOrder_LITTLE_ENDIAN);
     if (temp != (Int32)checksum) {
 //        throw new IOException("CRC mismatch");
         return E_IO_EXCEPTION;
@@ -317,8 +308,7 @@ ECode CGZIPInputStream::VerifyCrc()
 
     Int32 value;
     mInf->GetTotalOut(&value);
-    assert(0 && "TODO: Doesn't compile Memory.cpp");
-    // temp = Memory::PeekInt32(b, 4, ByteOrder_LITTLE_ENDIAN);
+    temp = Memory::PeekInt32(b, 4, ByteOrder_LITTLE_ENDIAN);
     if (temp != value) {
 //        throw new IOException("Size mismatch");
         return E_IO_EXCEPTION;

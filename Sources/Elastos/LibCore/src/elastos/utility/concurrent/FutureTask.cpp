@@ -125,7 +125,8 @@ static Boolean CompareAndSwapInt32(volatile int32_t* address, Int32 expect, Int3
     // Note: android_atomic_release_cas() returns 0 on success, not failure.
     int ret = 0;
 #ifdef _android
-    ret = android_atomic_release_cas(expect, update, address);
+    // ret = android_atomic_release_cas(expect, update, address);
+    ret = __sync_bool_compare_and_swap(address, expect, update);
 #else
     ret = atomic_cmpxchg(expect, update, address);
 #endif
@@ -138,7 +139,8 @@ static Boolean CompareAndSwapObject(volatile int32_t* address, IInterface* expec
     // Note: android_atomic_cmpxchg() returns 0 on success, not failure.
     int ret = 0;
 #ifdef _android
-    ret = android_atomic_release_cas((int32_t)expect, (int32_t)update, address);
+    // ret = android_atomic_release_cas((int32_t)expect, (int32_t)update, address);
+    ret = __sync_bool_compare_and_swap(address, (int32_t)expect, (int32_t)update);
 #else
     ret = atomic_cmpxchg((int32_t)expect, (int32_t)update, address);
 #endif

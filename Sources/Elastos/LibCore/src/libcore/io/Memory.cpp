@@ -33,7 +33,7 @@ namespace IO {
 #define LONG_ALIGNMENT_MASK 0x7
 #define INT_ALIGNMENT_MASK 0x3
 #define SHORT_ALIGNMENT_MASK 0x1
-#elif defined(__i386__)
+#elif defined(__i386__) || defined(__x86_64__)
 // x86 can load anything at any alignment.
 #define LONG_ALIGNMENT_MASK 0x0
 #define INT_ALIGNMENT_MASK 0x0
