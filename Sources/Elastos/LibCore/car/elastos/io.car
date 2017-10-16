@@ -574,20 +574,20 @@ module
         interface ICloseable;
     }
 
-    // class CRandomAccessFile {
-    //     constructor(
-    //         [in] IFile* file,
-    //         [in] String mode);
+    class CRandomAccessFile {
+        constructor(
+            [in] IFile* file,
+            [in] String mode);
 
-    //     constructor(
-    //         [in] String fileName,
-    //         [in] String mode);
+        constructor(
+            [in] String fileName,
+            [in] String mode);
 
-    //     interface IRandomAccessFile;
-    //     interface ICloseable;
-    //     interface IDataInput;
-    //     interface IDataOutput;
-    // }
+        interface IRandomAccessFile;
+        interface ICloseable;
+        interface IDataInput;
+        interface IDataOutput;
+    }
 
     class CSequenceInputStream {
         constructor(

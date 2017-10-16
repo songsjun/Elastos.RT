@@ -19,6 +19,7 @@
 
 //#include "_Elastos_HelloCar_CMyThread.h"    // include 编译器生成的夹壁墙头文件，文件名格式：_命名空间_CAR类名称.h
 #include "_CMyThread.h"    // include 编译器生成的夹壁墙头文件，文件名格式：_命名空间_CAR类名称.h
+#include "_Elastos.CoreLibrary.IO.h"
 #include <elastos/core/Thread.h>            // include 基类
 
 using Elastos::Core::Thread;

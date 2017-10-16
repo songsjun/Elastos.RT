@@ -18,8 +18,9 @@
  * ~/libcore/luni/src/test/java/libcore/java/io/FileTest.java
  */
 
+#include "_Elastos.CoreLibrary.IO.h"
+#include "_Elastos.CoreLibrary.Libcore.h"
 #include <stdarg.h>
-
 #include <elautoptr.h>
 #include <elastos/coredef.h>
 #include <elastos/core/StringUtils.h>

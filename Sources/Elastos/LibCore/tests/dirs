@@ -15,9 +15,9 @@
 #=========================================================================
 
 ifeq "$(XDK_TARGET_PLATFORM)" "linux"
-    DIRS = HelloCar
+    DIRS =  HelloCar
+    DIRS += libcore
 endif
-
 ifeq "$(XDK_TARGET_PLATFORM)" "android"
     DIRS = HelloCarDemo
 endif

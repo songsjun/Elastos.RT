@@ -14,5 +14,6 @@
 # limitations under the License.
 #=========================================================================
 
-DIRS += core
-DIRS += utility
+DIRS += math
+DIRS += io
+DIRS += sql
