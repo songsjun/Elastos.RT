@@ -32,20 +32,29 @@
 #include <elastos.h>
 #include <elastos/core/Object.h>
  #include <elastos/core/StringUtils.h>
-//#include <elautoptr.h>
-//#include <eltypes.h>
-//#include <Elastos.Sql.h>
-//#include <Elastos.CoreLibrary.h>
+#include "_Elastos.CoreLibrary.IO.h"
+#include "_Elastos.CoreLibrary.Libcore.h"
+#include "_Elastos.CoreLibrary.Sql.h"
 #include <stdio.h>
 //#include <elastos/Mutex.h>
 #include <elastos/core/ElaMath.h>
 #include <unistd.h>
 
-using namespace Elastos;
-using namespace Elastos::Sql::SQLite;
-using namespace Elastos::Sql::SQLite::JDBC;
+using Elastos::Sql::CDriverManager;
+using Elastos::Sql::SQLite::CBlob;
+using Elastos::Sql::SQLite::CDatabase;
+using Elastos::Sql::SQLite::CDatabaseHelper;
+using Elastos::Sql::SQLite::CStmt;
+using Elastos::Sql::SQLite::CTableResult;
+using Elastos::Sql::SQLite::ICallback;
+using Elastos::Sql::SQLite::IConstants;
+using Elastos::Sql::SQLite::IDatabase;
+using Elastos::Sql::SQLite::IDatabaseHelper;
+using Elastos::Sql::SQLite::IStmt;
+using Elastos::Sql::SQLite::ITableResult;
 using namespace Elastos::Sql;
 using namespace Elastos::IO;
+using Elastos::IO::CFile;
 using namespace Elastos::Core;
 // using Elastos::Core::Object;
 

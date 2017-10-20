@@ -20,6 +20,11 @@ TARGET_TYPE = ecx
 CAR_FLAGS += -n -u
 LUBE_FLAGS += -n -u
 
+INCLUDES += $(MAKEDIR)/../../../inc
+INCLUDES += $(MAKEDIR)/../../../inc/elastos;
+INCLUDES += $(MAKEDIR)/../../../inc/elastos/core;
+INCLUDES += ../../corelibrary
+
 IMPORTS = Elastos.CoreLibrary.eco
 
 SOURCES = Elastos.CoreLibrary.cpp

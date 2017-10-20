@@ -45,45 +45,45 @@ using Libcore::IO::ILibcore;
 using Libcore::IO::CLibcore;
 using Libcore::IO::IOs;
 
-#include "CMyThread.h"
-CAR_OBJECT_IMPL(CMyThread)
+// #include "CMyThread.h"
+// CAR_OBJECT_IMPL(CMyThread)
 
-ECode CMyThread::constructor(IFileDescriptor *ifd)
-{
-    mOutFd = ifd;
+// ECode CMyThread::constructor(IFileDescriptor *ifd)
+// {
+//     mOutFd = ifd;
 
-    return Thread::constructor();   // 实现 IThread 的 CAR 类必须调用基类 Thread 的某个 constructor 以便进行必要的初始化
-}
+//     return Thread::constructor();   // 实现 IThread 的 CAR 类必须调用基类 Thread 的某个 constructor 以便进行必要的初始化
+// }
 
-ECode CMyThread::Run()
-{
-    printf("CMyThread::Run\n");
-    AutoPtr<IFileOutputStream> fos;
-    const int TOTAL_SIZE = 1024;
+// ECode CMyThread::Run()
+// {
+//     printf("CMyThread::Run\n");
+//     AutoPtr<IFileOutputStream> fos;
+//     const int TOTAL_SIZE = 1024;
 
-    ECode ec = CFileOutputStream::New(mOutFd, (IFileOutputStream**)&fos);
-    if (FAILED(ec) || fos == NULL) {
-        printf(" Failed to create CFile. Error %08X\n", ec);
-    }
+//     ECode ec = CFileOutputStream::New(mOutFd, (IFileOutputStream**)&fos);
+//     if (FAILED(ec) || fos == NULL) {
+//         printf(" Failed to create CFile. Error %08X\n", ec);
+//     }
 
-    AutoPtr<ArrayOf<Byte> > buffer = ArrayOf<Byte>::Alloc(TOTAL_SIZE);
-    for (int i = 0; i < buffer->GetLength(); ++i) {
-        buffer->Set(i, (Byte)i);
-    }
+//     AutoPtr<ArrayOf<Byte> > buffer = ArrayOf<Byte>::Alloc(TOTAL_SIZE);
+//     for (int i = 0; i < buffer->GetLength(); ++i) {
+//         buffer->Set(i, (Byte)i);
+//     }
 
-    AutoPtr<IOutputStream> fo;
-    fo = IOutputStream::Probe(fos);
-    fo->Write(buffer);
+//     AutoPtr<IOutputStream> fo;
+//     fo = IOutputStream::Probe(fos);
+//     fo->Write(buffer);
 
-    AutoPtr<IIoUtils> iou;
-    CIoUtils::AcquireSingleton((IIoUtils**)&iou);
-    AutoPtr<IFileDescriptor> fd;
-    fd = IFileDescriptor::Probe(fos);
-    iou->CloseQuietly(fd);
-    iou->Close(mOutFd);
+//     AutoPtr<IIoUtils> iou;
+//     CIoUtils::AcquireSingleton((IIoUtils**)&iou);
+//     AutoPtr<IFileDescriptor> fd;
+//     fd = IFileDescriptor::Probe(fos);
+//     iou->CloseQuietly(fd);
+//     iou->Close(mOutFd);
 
-    return Thread::Run();
-}
+//     return Thread::Run();
+// }
 
 
 namespace Elastos {
@@ -221,7 +221,7 @@ void testSkipInPipes()
     os->Pipe((ArrayOf<IFileDescriptor*> **)&pipe);
 
     AutoPtr<IThread> feeder;
-    CMyThread::New((*pipe)[1], (IThread**)&feeder);
+    // CMyThread::New((*pipe)[1], (IThread**)&feeder);
     assert(feeder.Get() != NULL && "Thread is null!");
     feeder->Start();
 
@@ -533,3 +533,14 @@ int mainFileInputStreamTest(int argc, char *argv[])
 }
 }
 
+int main(int argc, char *argv[])
+{
+    printf("==================================\n");
+    printf("=========== Elastos LibcoreTest-IO Start ============\n");
+    printf("==================================\n");
+
+    Elastos::HelloCar::mainFileInputStreamTest(argc, argv);
+
+    printf("=========== Elastos LibcoreTest-IO End ============\n");
+    return 0;
+}

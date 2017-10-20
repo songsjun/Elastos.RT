@@ -307,13 +307,13 @@ module
             interface IFlushable;
         }
 
-        // class CDatabase {
-        //     interface IDatabase;
-        // }
+        class CDatabase {
+            interface IDatabase;
+        }
 
-        // singleton class CDatabaseHelper {
-        //     interface IDatabaseHelper;
-        // }
+        singleton class CDatabaseHelper {
+            interface IDatabaseHelper;
+        }
 
         class CJDBCDriver {
             constructor();
