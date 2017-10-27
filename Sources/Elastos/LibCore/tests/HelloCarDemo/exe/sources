@@ -18,11 +18,15 @@ TARGET_NAME = Elastos.HelloCarDemo
 TARGET_TYPE = lib
 
 EXPORT_LIBRARY= 1
+<<<<<<< 64ba28c11e85d730329c1fbe80d0937604318c4c
 
 ifeq "$(XDK_TARGET_PLATFORM)" "android"
 IMPORTS += libElastos.HelloCarDemo.so
 else
 IMPORTS += Elastos.HelloCarDemo.eco
 endif
+=======
+IMPORTS += Elastos.HelloCarDemo.eco
+>>>>>>> merge master to for_porting_libcore
 
 SOURCES += Elastos.HelloCarDemo.cpp

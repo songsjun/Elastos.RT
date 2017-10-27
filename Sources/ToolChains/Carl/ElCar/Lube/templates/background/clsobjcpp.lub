@@ -17,7 +17,7 @@ $
 $INPUT class
 $OUTPUT "${fullname}.cpp"
 
-#include "${ClassFullPathOfClassObject(class)}.h"
+#include "${ClassNameOfClassObj(class.name)}.h"
 #include "${fullname}.h"
 
 extern "C" Int32 g_dllLockCount;

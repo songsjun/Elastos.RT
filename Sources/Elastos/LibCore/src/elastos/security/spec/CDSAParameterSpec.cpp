@@ -14,7 +14,7 @@
 // limitations under the License.
 //=========================================================================
 
-#include "security/spec/CDSAParameterSpec.h"
+#include "CDSAParameterSpec.h"
 
 using Elastos::Security::Interfaces::EIID_IDSAParams;
 
@@ -64,4 +64,4 @@ ECode CDSAParameterSpec::constructor(
 
 } // namespace Spec
 } // namespace Security
-} // namespace Security
+} // namespace Elastos

@@ -38,6 +38,10 @@
 #include <stdio.h>
 //#include <elastos/Mutex.h>
 #include <elastos/core/ElaMath.h>
+<<<<<<< 64ba28c11e85d730329c1fbe80d0937604318c4c
+=======
+// #include "elastos/sql/CDriverManager.h"
+>>>>>>> merge master to for_porting_libcore
 #include <unistd.h>
 
 using Elastos::Sql::CDriverManager;
