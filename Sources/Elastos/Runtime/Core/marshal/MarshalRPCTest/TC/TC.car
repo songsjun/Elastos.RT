@@ -1,0 +1,19 @@
+
+module {
+    interface ITC {
+        Get([out] Int32 *i);
+
+        Set([in] Int32 i);
+
+        Increment();
+
+        Decrement();
+    }
+
+    class CTC {
+        constructor([in] Int32 i);
+
+        interface ITC;
+    }
+}
+

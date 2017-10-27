@@ -1,0 +1,14 @@
+
+This sample is too primitive, and it should be replaced with the better one.
+Don't care about its coding style and quality, it will be redesigned and recoded.
+
+Before building it, please:
+1. modify 'Sources/Elastos/LibCore/inc/Elastos/Core/sources' so as to support ETL.
+
+2. modify
+" #define ELASTOS_SMANS_IP "192.168.3.21" // It's your SMan IP. "
+in ./SManC/CSManC.cpp
+
+
+
+Kevin Xu

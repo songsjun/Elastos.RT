@@ -18,3 +18,7 @@ ifeq "$(XDK_TARGET_PLATFORM)" "android"
 #	DIRS += android_linux
 #	DIRS += linux_rpc
 endif
+
+DIRS = others_rpc
+DIRS += others
+DIRS += MarshalRPCTest

@@ -1,0 +1,72 @@
+module SManC.eco
+{
+
+    interface IInterface;
+    interface IObject;
+    interface IAspect;
+    interface IClassObject;
+    interface ISManC;
+
+    typedef [dummytype] EGuid ClassID;
+    typedef [dummytype] Int32 AggregateType;
+    typedef [dummytype] EMuid InterfaceID;
+
+    interface IInterface {
+    }
+
+    interface IObject {
+        Aggregate(
+            [in] Int32 type, 
+            [in] IInterface * object);
+
+        GetDomain(
+            [out] IInterface ** object);
+
+        GetClassID(
+            [out] ClassID * clsid);
+    }
+
+    interface IAspect {
+        AspectAggregate(
+            [in] AggregateType type, 
+            [in] IInterface * object);
+
+        AspectGetDomain(
+            [out] IInterface ** object);
+
+        GetAspectID(
+            [out] ClassID * clsid);
+    }
+
+    interface IClassObject {
+        CreateObject(
+            [in] IInterface * outer, 
+            [in] InterfaceID riid, 
+            [out] IInterface ** object);
+
+        StayResident(
+            [in] Boolean bIsStayResident);
+    }
+
+    interface ISManC {
+        AddService(
+            [in] const String& name, 
+            [in] IInterface * service);
+
+        AddServiceEx(
+            [in] const String& name, 
+            [in] IInterface * service, 
+            [in] Boolean allowIsolated);
+
+        GetService(
+            [in] const String& name, 
+            [out] IInterface ** service);
+    }
+
+    [
+
+    ]
+    class CSManC {
+        interface ISManC;
+    }
+}

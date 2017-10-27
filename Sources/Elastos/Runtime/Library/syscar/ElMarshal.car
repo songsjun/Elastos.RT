@@ -26,30 +26,9 @@ library
         UnmarshalFlag_Coexisting        = 0x20,
     }
 
+
     [deprecated]
     interface IParcel {
-        /**
-         * Returns the raw bytes of the parcel.
-         *
-         * <p class="note">The data you retrieve here <strong>must not</strong>
-         * be placed in any kind of persistent storage (on local disk, across
-         * a network, etc).  For that, you should use standard serialization
-         * or another kind of general serialization mechanism.  The Parcel
-         * marshalled representation is highly optimized for local IPC, and as
-         * such does not attempt to maintain compatibility with data created
-         * in different versions of the platform.
-         */
-        Marshall(
-            [out, callee] ArrayOf<Byte>* bytes);
-
-        /**
-         * Set the bytes in data to be the raw bytes of this Parcel.
-         */
-        Unmarshall(
-            [in] ArrayOf<Byte>* data,
-            [in] Int32 offest,
-            [in] Int32 length);
-
         AppendFrom(
             [in] IParcel* parcel,
             [in] Int32 offset,
@@ -70,11 +49,17 @@ library
         WriteBoolean(
             [in] Boolean value);
 
-        ReadChar(
+        ReadChar8(
             [out] Char32 *value);
 
-        WriteChar(
+        WriteChar8(
             [in] Char32 value);
+
+        ReadChar16(
+            [out] Char16 *value);
+
+        WriteChar16(
+            [in] Char16 value);
 
         ReadInt16(
             [out] Int16 *value);
@@ -105,6 +90,12 @@ library
 
         WriteDouble(
             [in] Double value);
+
+        ReadCString(
+            [out] String* str);
+
+        WriteCString(
+            [in] String str);
 
         ReadString(
             [out] String* str);
@@ -137,17 +128,140 @@ library
         WriteArrayOf(
             [in] Handle32 array);
 
+        ReadArrayOfCString(
+            [out, callee] ArrayOf<String>* array);
+
+        WriteArrayOfCString(
+            [in] ArrayOf<String>* array);
+
         ReadArrayOfString(
             [out, callee] ArrayOf<String>* array);
 
         WriteArrayOfString(
             [in] ArrayOf<String>* array);
 
+        ReadBufferOf(
+            [out] Handle32 *buffer);
+
+        WriteBufferOf(
+            [in] Handle32 buffer);
+
+        ReadBufferOfCString(
+            [out] Handle32 *buffer);
+
+        WriteBufferOfCString(
+            [in] BufferOf<String> buffer);
+
+        ReadBufferOfString(
+            [out] Handle32 *buffer);
+
+        WriteBufferOfString(
+            [in] BufferOf<String> buffer);
+
+        ReadStringBuf(
+            [out] Handle32 *buffer);
+
+        WriteStringBuf(
+            [in] Handle32 buffer);
+
+        ReadMemoryBuf(
+            [out] Handle32 *buffer);
+
+        WriteMemoryBuf(
+            [in] Handle32 buffer);
+
         ReadInterfacePtr(
             [out] Handle32 *itfpp);
 
         WriteInterfacePtr(
             [in] IInterface* value);
+
+        ReadBytePtr(
+            [out] Handle32 *bypp);
+
+        WriteBytePtr(
+            [in] Handle32 address);
+
+        ReadBooleanPtr(
+            [out] Handle32 *bopp);
+
+        WriteBooleanPtr(
+            [in] Handle32 address);
+
+        ReadChar8Ptr(
+            [out] Handle32 *c8pp);
+
+        WriteChar8Ptr(
+            [in] Handle32 address);
+
+        ReadChar16Ptr(
+            [out] Handle32 *c16pp);
+
+        WriteChar16Ptr(
+            [in] Handle32 address);
+
+        ReadInt16Ptr(
+            [out] Handle32 *i16pp);
+
+        WriteInt16Ptr(
+            [in] Handle32 address);
+
+        ReadInt32Ptr(
+            [out] Handle32 *i32pp);
+
+        WriteInt32Ptr(
+            [in] Handle32 address);
+
+        ReadInt64Ptr(
+            [out] Handle32 *i64pp);
+
+        WriteInt64Ptr(
+            [in] Handle32 address);
+
+        ReadFloatPtr(
+            [out] Handle32 *fpp);
+
+        WriteFloatPtr(
+            [in] Handle32 address);
+
+        ReadDoublePtr(
+            [out] Handle32 *dpp);
+
+        WriteDoublePtr(
+            [in] Handle32 address);
+
+        ReadCStringPtr(
+            [out] Handle32 *address);
+
+        ReadStringPtr(
+            [out] Handle32 *address);
+
+        WriteStringPtr(
+            [in] Handle32 address);
+
+        ReadStructPtr(
+            [out] Handle32 *address);
+
+        ReadEMuidPtr(
+            [out] Handle32 *idpp);
+
+        WriteEMuidPtr(
+            [in] Handle32 idPtr);
+
+        ReadEGuidPtr(
+            [out] Handle32 *idpp);
+
+        WriteEGuidPtr(
+            [in] Handle32 idPtr);
+
+        ReadInterfacePtrPtr(
+            [out] Handle32 *itfpp);
+
+        WriteInterfacePtrPtr(
+            [in] Handle32 address);
+
+        ReadBufferOfPtr(
+            [out] Handle32 *buffer);
 
         // Place a file descriptor into the parcel.  The given fd must remain
         // valid for the lifetime of the parcel.
@@ -173,20 +287,11 @@ library
         SetDataPosition(
             [in] Int32 position);
 
-        GetDataPayload(
+        GetElementPayload(
             [out] Handle32* buffer);
 
-        GetDataSize(
+        GetElementSize(
             [out] Int32* size);
-
-        SetDataSize(
-            [in] Int32 size);
-
-        GetDataCapacity(
-            [out] Int32* capacity);
-
-        SetDataCapacity(
-            [in] Int32 size);
     }
 
     interface IParcelable {

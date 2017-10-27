@@ -1,0 +1,9 @@
+TARGET_NAME = _sock
+TARGET_TYPE = so
+
+SOURCES += sock.cpp
+
+
+CPP_FLAGS += -g
+
+LIBRARIES += -lc -lpthread -lstdc++

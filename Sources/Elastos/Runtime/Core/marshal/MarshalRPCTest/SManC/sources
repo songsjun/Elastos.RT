@@ -1,0 +1,17 @@
+TARGET_NAME = SManC
+TARGET_TYPE = eco
+
+SOURCES += SManC.car
+SOURCES += CSManC.cpp
+
+CPP_FLAGS += -fpermissive
+CPP_FLAGS += -g
+
+LIBRARIES += $(XDK_TARGETS)/_sock.so
+
+LIBRARIES += $(XDK_USER_LIB)/Elastos.Runtime.lib
+LIBRARIES += $(XDK_TARGETS)/Elastos.Runtime.eco
+LIBRARIES += $(XDK_TARGETS)/Elastos.Core.eco
+LIBRARIES += $(XDK_USER_LIB)/crt0.lib
+
+LIBRARIES += -lpthread -lstdc++

@@ -1,0 +1,7 @@
+DIRS += TC
+DIRS += sock
+DIRS += SManC
+DIRS += SManS
+DIRS += SMan
+DIRS += Client
+DIRS += Server
